@@ -121,31 +121,95 @@
   }
 } */
 
+/* Global color variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-background: #ffffff;
+  --color-surface: #f4f4f4;
+  --color-primary: #0ea5e9;
+  --color-secondary: #8b5cf6;
+  --color-tertiary: #ec4899;
+  --color-content: #171717;
+
+  --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #8b5cf6 100%);
+  --gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f43f5e 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(14,165,233,0.15) 0%, rgba(99,102,241,0.15) 50%, rgba(139,92,246,0.15) 100%);
 }
 
+/* Dark mode override using prefers-color-scheme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: #0a0a0a;
+    --color-surface: #1a1a1a;
+    --color-content: #fafafa;
   }
 }
 
+/* Apply background and text colors */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-content);
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+.bg-gradient-secondary {
+  background-image: var(--gradient-secondary);
+}
+.bg-gradient-subtle {
+  background-image: var(--gradient-subtle);
+}
 
-@keyframes gradient-pulse {
-  0% { opacity: 0.3; }
+/* Animation keyframes */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes underlineGrow {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.3; }
   50% { opacity: 0.6; }
-  100% { opacity: 0.3; }
 }
 
-.animate-gradient-pulse {
-  animation: gradient-pulse 3s ease-in-out infinite;
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+.animate-float-up {
+  animation: floatUp 6s ease-in-out infinite;
+}
+.animate-gradient {
+  animation: gradientMove 8s ease infinite;
+}
+.animate-pulse-slow {
+  animation: pulseSlow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-spin-slow {
+  animation: spinSlow 3s linear infinite;
+}
+.animate-underline {
+  animation: underlineGrow 0.5s ease-out;
 }
