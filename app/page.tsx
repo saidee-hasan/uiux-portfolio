@@ -1,11 +1,18 @@
 import { CustomCursor } from "@/components/shared/CustomCursor";
-import Navbar from "@/components/shared/navbar";
+import AboutPage from "./about/page";
+import Blogs from "./blogs/page";
+import Projects from "./projects/page";
+
+
 
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900 dark:bg-white">
-      <Navbar />
+    <div className=" ">
+      <AboutPage/>
+      <Blogs/>
+      <Projects />
+
 
       <CustomCursor
         innerSize={8}
@@ -15,12 +22,13 @@ export default function Home() {
         outerAlpha={0}
         hasBlendMode={true}
         innerStyle={{
-          backgroundColor: "red",
+          backgroundColor: "#ec4899",
         }}
         outerStyle={{
-          border: "2px solid red",
+          border: "2px solid #0ea5e9",
         }}
       />
+
     </div>
   );
 }
