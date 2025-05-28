@@ -1,10 +1,14 @@
 //componensts> shared > navbar
 "use client";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { SheetDemo } from "../SheetDemo";
+import ModeToggle from "./ModeToggle";
+
+
 
 const Navbar = () => {
   const theme = "dark"
@@ -68,7 +72,11 @@ const Navbar = () => {
           })
           }
           {/* dark ans light theme button */}
-          <button className="p-2 rounded-lg text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-colorsduration-200 cursor-pointer">
+          {/* <button 
+          onClick={toggleMobileMenu}
+          type='button
+          className="p-2 rounded-lg text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-color transition-all duration-500 ease-in-out cursor-pointer">
+            
             {
               theme ==="dark" ? (
                 <SunIcon className="w-5 h-5"/>
@@ -76,9 +84,14 @@ const Navbar = () => {
                 <MoonIcon className="w-5 h-5"/>
               )
             }
-          </button>
+          </button> */}
+            <ModeToggle />
         </div>
-        {/* mobile menu  */}
+        {/* mobile menu button  */}
+
+         <div className="md:hidden hover:bg-gray-100 dark:hover:bg-gray-800">
+           <SheetDemo />
+         </div>
       </div>
     </motion.nav>
   );

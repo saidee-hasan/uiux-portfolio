@@ -6,6 +6,7 @@ import Footer from './../components/shared/Footer';
 
 import AnimatedCursor from "react-animated-cursor";
 import CustomCursor from "@/components/shared/CustomCursor";
+import { ThemeProvider } from "@/components/shared/ThemeProvider";
 
 
 
@@ -41,12 +42,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
       >
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Navbar />
         <CustomCursor />
         {/* <AnimatedCursor /> */}
 
         <main className="min-h-screen pt-24">{children}</main>
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
