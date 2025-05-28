@@ -1,12 +1,13 @@
+import { CustomCursor } from "@/components/shared/CustomCursor";
 import Navbar from "@/components/shared/navbar";
-import AnimatedCursor from "react-animated-cursor";
+
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 dark:bg-white">
       <Navbar />
 
-      <AnimatedCursor
+      <CustomCursor
         innerSize={8}
         outerSize={40}
         innerScale={1}

@@ -1,3 +1,5 @@
+
+
 export interface Project {
     title: string,
     description: string,
@@ -14,3 +16,4 @@ export interface Blog {
     readTime: string,
     slug: string,
 }
+
