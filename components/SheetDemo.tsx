@@ -48,7 +48,7 @@ export function SheetDemo() {
               </Link>
             </SheetClose>
           ))}
-         <div className="px-4"> <ModeToggle /></div>
+         <div className="px-2"> <ModeToggle/> </div>
         </div>
       </SheetContent>
     </Sheet>
