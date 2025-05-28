@@ -1,17 +1,18 @@
-"use client";
-import AnimatedCursor from "react-animated-cursor";
+// components/shared/CustomCursor.tsx
+'use client'
+import AnimatedCursor from 'react-animated-cursor'
 
- interface AnimatedCursorProps {
-  innerSize?: number;
-  outerSize?: number;
-  innerScale?: number;
-  outerScale?: number;
-  outerAlpha?: number;
-  hasBlendMode?: boolean;
-  innerStyle?: React.CSSProperties;
-  outerStyle?: React.CSSProperties;
-}
+const CustomCursor = () => (
+  <AnimatedCursor
+    innerSize={8}
+    outerSize={35}
+    outerAlpha={0}
+    innerScale={1}
+    outerScale={2}
+    hasBlendMode={false}
+    innerStyle={{ backgroundColor: '#ec4899' }}
+    outerStyle={{ border: '2px solid #0ea5e9' }}
+  />
+)
 
-export const CustomCursor = (props: AnimatedCursorProps) => {
-  return <AnimatedCursor {...props} />;
-};
+export default CustomCursor

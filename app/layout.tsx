@@ -4,6 +4,11 @@ import "./globals.css";
 import Navbar from "@/components/shared/navbar";
 import Footer from './../components/shared/Footer';
 
+import AnimatedCursor from "react-animated-cursor";
+import CustomCursor from "@/components/shared/CustomCursor";
+
+
+
 
 
 const geistSans = Geist({
@@ -37,6 +42,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
       >
         <Navbar />
+        <CustomCursor />
+        {/* <AnimatedCursor /> */}
+
         <main className="min-h-screen pt-24">{children}</main>
         <Footer />
       </body>

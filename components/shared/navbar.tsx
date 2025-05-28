@@ -1,47 +1,84 @@
 //componensts> shared > navbar
-'use client'
-import { motion } from "motion/react"
+"use client";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const Navbar = () => {
-  const [isMobileOpen, setIsMobileOpen]= useState<boolean>(false)
+  const theme = "dark"
+  const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
+  const pathname = usePathname();
 
-  const toggleMobileMenu = ()=>{
-    setIsMobileOpen(!isMobileOpen)
-  }
+  const toggleMobileMenu = () => {
+    setIsMobileOpen(!isMobileOpen);
+  };
 
-  // menu item 
+  // menu item
   const menuItems = [
-    {href: "/", label:"Home"},
-    {href: "/about", label:"About Us"},
-    {href: "/projects", label:"projects"},
-    {href: "/blogs", label:"blogs"},
-    {href: "/contact", label:"contact"}
-  ]
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/projects", label: "projects" },
+    { href: "/blogs", label: "blogs" },
+    { href: "/contact", label: "contact" },
+  ];
 
   return (
-    <motion.nav 
-    initial={{y: -100}}
-    animate={{y: 0}}
-    className="fixed w-full z-50 bg-background/50 dark:bg-dark/80 backdrop-blur-2xl">
-      <div className="container py-3">
-        <div className="flex items-center justify-center gap-3">
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed w-full z-50 bg-background/50 dark:bg-dark/80 backdrop-blur-2xl"
+    >
+      <div className="container py-3 flex items-center justify-between gap-3">
+        {/* Logo & Name */}
+        <div className="flex items-center gap-2">
           <div className="relative h-8 w-8 rounded-full overflow-hidden">
-            {/* Spinning border */}
+            {/* Spinning gradient border */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-tertiary animate-spin-slow rounded-full [mask-image:linear-gradient(transparent,white)]" />
-            {/* Empty div to spin */}
 
-            {/* Static inner circle with initials */}
+            {/* Inner static circle with initials */}
             <div className="absolute inset-[2px] bg-content rounded-full flex items-center justify-center z-10">
               <span className="font-bold bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">
-                TS
+                <Link href="/">TS</Link>
               </span>
             </div>
           </div>
-          <span className="font-semibold text-white/90 group-hover:text-primary transition-colors">
+
+          {/* Name */}
+          <h2 className="font-semibold text-white/90 hover:text-primary transition-colors">
             Tasmina Akter
-          </span>
+          </h2>
         </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-6">
+          {menuItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`transition-colors font-medium ${isActive ? 'font-semibold text-primary' : 'text-white/80 hover:text-primary'}`}
+              >
+                {item.label}
+              </Link>
+            );
+          })
+          }
+          {/* dark ans light theme button */}
+          <button className="p-2 rounded-lg text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-colorsduration-200 cursor-pointer">
+            {
+              theme ==="dark" ? (
+                <SunIcon className="w-5 h-5"/>
+              ) : (
+                <MoonIcon className="w-5 h-5"/>
+              )
+            }
+          </button>
+        </div>
+        {/* mobile menu  */}
       </div>
     </motion.nav>
   );
