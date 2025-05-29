@@ -4,15 +4,14 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { Button } from "@/components/ui/button"
 import { Bars3Icon } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import ModeToggle from "./shared/ModeToggle"
+import { GithubIcon, LinkedInIcon } from "@/components/social-icons" // ✅ Make sure path is correct
 
 export function SheetDemo() {
   const menuItems = [
@@ -23,20 +22,25 @@ export function SheetDemo() {
     { href: '/contact', label: 'Contact' },
   ]
 
+  const socialLinks = {
+    github: "https://github.com/wptasmina",
+    linkedin: "https://www.linkedin.com/in/wptasmina",
+  }
+
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">
-          <Bars3Icon className="w-6 h-6" />
-        </Button>
+        <div className="bg-gray-800 p-1 rounded-md cursor-pointer">
+          <Bars3Icon className="w-6 h-6 text-white" />
+        </div>
       </SheetTrigger>
 
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className="text-lg">Menu</SheetTitle>
+          <SheetTitle className="text-lg font-semibold">Tasmina</SheetTitle>
         </SheetHeader>
 
-        {/* ✅ Menu items here */}
+        {/* Menu items */}
         <div className="py-4 space-y-4">
           {menuItems.map((item) => (
             <SheetClose asChild key={item.href}>
@@ -48,8 +52,30 @@ export function SheetDemo() {
               </Link>
             </SheetClose>
           ))}
-         <div className="px-2"> <ModeToggle/> </div>
         </div>
+
+        {/* Divider */}
+        <div className="h-px bg-gray-700 my-4" />
+
+        {/* Theme toggle & Social icons */}
+        <div className="flex gap-4 px-4 mb-4">
+          <ModeToggle />
+          <Link
+            href={socialLinks.github}
+            target="_blank"
+            className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
+          >
+            <GithubIcon className="h-5 w-5 text-white group-hover:text-primary" />
+          </Link>
+          <Link
+            href={socialLinks.linkedin}
+            target="_blank"
+            className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
+          >
+            <LinkedInIcon className="h-5 w-5 text-white group-hover:text-primary" />
+          </Link>
+        </div>
+
       </SheetContent>
     </Sheet>
   )

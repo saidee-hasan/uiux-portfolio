@@ -51,7 +51,9 @@ body {
 a {
   transition: all 0.2s ease;
 }
-
+/* 
+#8B96B8
+#271F2C */
 
 @layer components {
   .container {
