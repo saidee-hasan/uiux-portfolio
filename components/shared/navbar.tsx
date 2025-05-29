@@ -33,7 +33,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed w-full z-50 bg-background/50 dark:bg-dark/80 backdrop-blur-2xl"
+      className="fixed w-full z-50 bg-background/90 dark:bg-dark/80 backdrop-blur-2xl"
     >
       <div className="container py-3 flex items-center justify-between gap-3">
         {/* Logo & Name */}
@@ -71,20 +71,6 @@ const Navbar = () => {
             );
           })
           }
-          {/* dark ans light theme button */}
-          {/* <button 
-          onClick={toggleMobileMenu}
-          type='button
-          className="p-2 rounded-lg text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-color transition-all duration-500 ease-in-out cursor-pointer">
-            
-            {
-              theme ==="dark" ? (
-                <SunIcon className="w-5 h-5"/>
-              ) : (
-                <MoonIcon className="w-5 h-5"/>
-              )
-            }
-          </button> */}
             <ModeToggle />
         </div>
         {/* mobile menu button  */}
