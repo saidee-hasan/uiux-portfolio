@@ -44,7 +44,7 @@ export default function RootLayout({
         >
           <Navbar />
           <CustomCursor />
-          <main className="min-h-screen pt-24">{children}</main>
+          <main className="min-h-screen pt-17">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
