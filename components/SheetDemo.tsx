@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   Sheet,
@@ -7,25 +7,26 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
-import { Bars3Icon } from "@heroicons/react/24/outline"
-import Link from "next/link"
-import ModeToggle from "./shared/ModeToggle"
-import { GithubIcon, LinkedInIcon } from "@/components/social-icons" // ✅ Make sure path is correct
+} from "@/components/ui/sheet";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import ModeToggle from "./shared/ModeToggle";
+import { GithubIcon, LinkedInIcon } from "@/components/social-icons"; // ✅ Make sure path is correct
+import { motion } from "motion/react";
 
 export function SheetDemo() {
   const menuItems = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/blogs', label: 'Blogs' },
-    { href: '/contact', label: 'Contact' },
-  ]
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/projects", label: "Projects" },
+    { href: "/blogs", label: "Blogs" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   const socialLinks = {
     github: "https://github.com/wptasmina",
     linkedin: "https://www.linkedin.com/in/wptasmina",
-  }
+  };
 
   return (
     <Sheet>
@@ -42,14 +43,24 @@ export function SheetDemo() {
 
         {/* Menu items */}
         <div className="py-4 space-y-4">
-          {menuItems.map((item) => (
+          {menuItems.map((item, index) => (
             <SheetClose asChild key={item.href}>
-              <Link
+              <motion.a
+                key={item.href}
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{
+                  delay: index * 0.1,
+                  duration: 0.3,
+                  ease: "easeInOut",
+                }}
                 href={item.href}
                 className="block text-base font-medium text-gray-100 px-4 hover:text-primary transition-colors"
               >
                 {item.label}
-              </Link>
+              </motion.a>
             </SheetClose>
           ))}
         </div>
@@ -58,7 +69,18 @@ export function SheetDemo() {
         <div className="h-px bg-gray-700 my-4" />
 
         {/* Theme toggle & Social icons */}
-        <div className="flex gap-4 px-4 mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{
+            duration: 0.3,
+            delay: 0.1,
+            ease: "easeInOut",
+          }}
+          className="flex gap-4 px-4 mb-4"
+        >
           <ModeToggle />
           <Link
             href={socialLinks.github}
@@ -74,9 +96,8 @@ export function SheetDemo() {
           >
             <LinkedInIcon className="h-5 w-5 text-white group-hover:text-primary" />
           </Link>
-        </div>
-
+        </motion.div>
       </SheetContent>
     </Sheet>
-  )
+  );
 }
