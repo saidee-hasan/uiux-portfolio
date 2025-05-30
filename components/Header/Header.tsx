@@ -1,0 +1,30 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { SheetDemo } from "../SheetDemo";
+import Navbar from "../shared/navbar";
+
+const  Header = () => {
+
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed w-full z-50 backdrop:bg-white/50 dark:bg-content/30 backdrop-blur border-b border-gray-100 dark:border-gray-800 shadow overflow-hidden"
+    >
+      <div className="containers py-3 flex w-full items-center justify-between">
+        {/* Left - Logo & Name */}
+        <Navbar />
+        
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden hover:bg-gray-100 dark:hover:bg-gray-100">
+          <SheetDemo />
+        </div>
+        
+      </div>
+    </motion.nav>
+  );
+};
+
+export default Header;

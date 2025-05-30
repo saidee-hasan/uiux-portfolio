@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/navbar";
 import CustomCursor from "@/components/shared/CustomCursor";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
+import Header from "@/components/Header/Header";
 import Footer from "@/components/shared/Footer";
 
 const geistSans = Geist({
@@ -21,10 +21,6 @@ export const metadata: Metadata = {
   description: "Created by Tasmina Akter",
 };
 
-// export const metadata = {
-//   title: "Custom Cursor App",
-//   description: "Next.js + Animated Cursor",
-// };
 
 export default function RootLayout({
   children,
@@ -32,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="">
+    <html lang="en" suppressHydrationWarning className="scrollbar-thin scrollbar-thumb-primary scrollbar-track-secondary">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -42,9 +38,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <Header />
           <CustomCursor />
-          <main className="min-h-screen pt-17">{children}</main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

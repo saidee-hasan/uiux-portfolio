@@ -1,7 +1,12 @@
-import React from 'react'
+import SectionTitle from '@/components/shared/SectionTitle/SectionTitle'
+
 
 export default function AboutPage() {
   return (
-    <div>About page</div>
+       <SectionTitle
+          subHeading="---Don't miss---"
+          heading="TODAY'S OFFER"
+        ></SectionTitle>
+
   )
 }

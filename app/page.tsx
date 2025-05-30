@@ -1,5 +1,5 @@
 
-import Hero from "@/components/Hero";
+import HeroSection from "@/components/HeroSection/HeroSection";
 import AboutPage from "./about/page";
 import Blogs from "./blogs/page";
 import Projects from "./projects/page";
@@ -8,12 +8,12 @@ import Faq from "@/components/Faq";
 export default function Home() {
 
   return (
-    <div>
-      <Hero/>
+    <main>
+      <HeroSection/>
       <AboutPage/>
       <Blogs/>
       <Projects />
       <Faq/>
-    </div>
+    </main>
   );
 }

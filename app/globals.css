@@ -11,9 +11,10 @@
   --color-background: #0a0a0a;
   --color-primary: #0ea5e9;
   --color-secondary: #8b5cf6;
-  --color-surface: #f4f4f4;
+  --color-surface: #1a1a1a;
   --color-tertiary: #ec4899;
   --color-content: #171717;
+  --color-contents: #fafafa;
   --color-foreground: #ededed;
   --color-light: #ffffff;
 
@@ -33,12 +34,21 @@
   --animation-fade-in: fadeIn 0.5s ease-in-out;
   --animation-slide-up: slideUp 0.5s ease-in-out;
 }
-
+html{
+  scroll-behavior: smooth;
+}
+/* styles/globals.css */
+/* html,
+body {
+  overflow-x: hidden;
+  scrollbar-color: #0ea5e9 #8b5cf6;
+} */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--color-background);
+  overflow: hidden;
   @apply bg-white text-black;
 }
 
@@ -56,7 +66,7 @@ a {
 #271F2C */
 
 @layer components {
-  .container {
+  .containers {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
@@ -72,8 +82,26 @@ a {
     @apply bg-secondary text-white hover:bg-secondary/90;
   }
   
+  /* hero section start */
+  .section-continar {
+    @apply relative overflow-hidden bg-white dark:bg-black;
+  }
+  .hero-container{
+    @apply flex flex-col md:flex-row items-center min-h-screen gap-16
+  }
+  .contentText{
+    @apply flex flex-col-reverse md:flex-row items-center justify-between min-h-screen gap-12 md:gap-20 py-16
+  }
+  .hero-title {
+    @apply text-3xl md:text-5xl font-extrabold leading-tight bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent mb-4
+  }
+  .hero-span {
+    @apply ml-2 bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent
+  }
+/* hero section end */
+
   .section-title {
-    @apply text-3xl font-bold mb-8 text-center;
+    @apply text-3xl font-bold mb-8 text-center text-foreground;
   }
 }
 

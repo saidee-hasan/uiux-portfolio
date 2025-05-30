@@ -11,8 +11,8 @@ import {
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import ModeToggle from "./shared/ModeToggle";
-import { GithubIcon, LinkedInIcon } from "@/components/social-icons"; // ✅ Make sure path is correct
 import { motion } from "motion/react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 export function SheetDemo() {
   const menuItems = [
@@ -87,14 +87,14 @@ export function SheetDemo() {
             target="_blank"
             className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
           >
-            <GithubIcon className="h-5 w-5 text-white group-hover:text-primary" />
+            <FaGithub className="h-5 w-5 text-white group-hover:text-primary" />
           </Link>
           <Link
             href={socialLinks.linkedin}
             target="_blank"
             className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
           >
-            <LinkedInIcon className="h-5 w-5 text-white group-hover:text-primary" />
+            <FaLinkedinIn className="h-5 w-5 text-white group-hover:text-primary" />
           </Link>
         </motion.div>
       </SheetContent>

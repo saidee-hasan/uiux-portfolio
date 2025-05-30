@@ -1,6 +1,5 @@
 import { Blog } from "@/types";
 
-
 export const blogs: Blog[] = [
     {
         title: 'Getting Started with Next.js 14',
