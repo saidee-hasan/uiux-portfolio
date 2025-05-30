@@ -1,7 +1,11 @@
-type SectionTitleProps = {
-  heading: string
-  subHeading: string
-}
+
+// type SectionTitleProps = {
+//   heading: string
+//   subHeading: string
+// }
+
+
+import { SectionTitleProps } from "@/types";
 
 export default function SectionTitle({ heading, subHeading}: SectionTitleProps) {
   return (

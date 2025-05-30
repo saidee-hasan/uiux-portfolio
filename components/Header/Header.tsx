@@ -13,7 +13,7 @@ const  Header = () => {
       transition={{ duration: 0.5 }}
       className="fixed w-full z-50 backdrop:bg-white/50 dark:bg-content/30 backdrop-blur border-b border-gray-100 dark:border-gray-800 shadow overflow-hidden"
     >
-      <div className="containers py-3 flex w-full items-center justify-between">
+      <div className="wrapper py-3 flex w-full items-center justify-between">
         {/* Left - Logo & Name */}
         <Navbar />
         

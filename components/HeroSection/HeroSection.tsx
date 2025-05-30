@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import CustomButton from "../ui/CustomButton";
 import { fadeLeft, fadeUp } from "@/lib/motionVariants";
 import { FolderArrowDownIcon, PhoneIcon } from "@heroicons/react/24/outline";
-import { ContactIcon } from "lucide-react";
+import { CountsUp } from './CountsUp';
 
 export default function HeroSection() {
   return (
     <section className="section-container">
-      <div className="containers">
-        <div className="contentText ">
+      <div className="wrapper">
+        <div className="contentText">
           {/* Text Content */}
           <motion.div
             {...fadeLeft}
@@ -67,6 +67,12 @@ export default function HeroSection() {
                 Download CV
               </CustomButton>
             </motion.div>
+
+              {/* Countup  */}
+          <div  className="">
+            <CountsUp />
+          </div>
+
           </motion.div>
 
           {/* Image Content */}

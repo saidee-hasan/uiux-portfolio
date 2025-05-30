@@ -48,7 +48,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--color-background);
-  overflow: hidden;
+  /* overflow: hidden; */
   @apply bg-white text-black;
 }
 
@@ -66,7 +66,7 @@ a {
 #271F2C */
 
 @layer components {
-  .containers {
+  .wrapper {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
