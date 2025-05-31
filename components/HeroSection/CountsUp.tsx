@@ -26,11 +26,12 @@ export const CountsUp = () => {
   return (
 <section className="py-8">
   <div className="border border-gray-800 bg-content/20 backdrop:blur-2xl shadow rounded-lg py-6 px-2">
-    <div className="grid grid-cols-2 md:grid-cols-3  gap-4 ">
+    <div className="d-grid">
+      
       {stats.map(({ num, text }, index) => (
         <div
           key={index}
-          className="flex items-center gap-2 justify-self-center-safe"
+          className="d-flex gap-2 justify-self-center-safe"
         >
           <CountUp
             end={num}

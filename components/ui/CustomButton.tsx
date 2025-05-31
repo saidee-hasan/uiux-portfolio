@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import React from 'react'
 
 type CustomButtonProps = {
   children: React.ReactNode
@@ -28,11 +27,13 @@ export default function CustomButton({
   whileTapScale = 0.95,
 }: CustomButtonProps) {
   const base =
-    'relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-colors duration-200 overflow-hidden group'
+    'relative-overflo d-flex-justifi gap-2 px-6 py-3 rounded-full font-medium transition-colors duration-200  group'
 
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary/90',
-    secondary: 'bg-secondary text-white hover:bg-secondary/90',
+    // primary: 'bg-primary text-white hover:bg-primary/90',
+
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
     outline:
       'border border-white/10 text-contents hover:border-primary/30 bg-surface leading-tight',
   }

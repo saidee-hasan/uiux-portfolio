@@ -37,9 +37,9 @@ const Navbar = () => {
       <motion.div
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="flex items-center gap-2  group md:w-1/3 "
+        className="d-flex gap-2  group md:w-1/3 "
       >
-        <div className="relative h-8 w-8 rounded-full overflow-hidden">
+        <div className="relative-overflo h-8 w-8 rounded-full ">
           <div className="absolute inset-0 bg-gradient-to-r from-primary to-tertiary animate-spin-slow rounded-full [mask-image:linear-gradient(transparent,white)]" />
           <div className="absolute inset-[2px] bg-content rounded-full flex items-center justify-center z-10">
             <span className="font-bold bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">
@@ -91,11 +91,13 @@ const Navbar = () => {
         <div className="w-px h-6 bg-black/10 dark:bg-white/10 mx-2 hidden md:block" />
 
         {socialLinks.map(({href, icon}, key) => (
+          
           <Link
             key={href}
             href={href}
             target="_blank"
             className="p-2 rounded-lg bg-content text-amber-50 dark:bg-white/5 dark:hover:bg-primary/10 transition-colors hover:text-primary"
+            
           >
             {icon}
           </Link>

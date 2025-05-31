@@ -13,7 +13,7 @@ const  Header = () => {
       transition={{ duration: 0.5 }}
       className="header-section"
     >
-      <div className="wrapper py-3 flex w-full items-center justify-between">
+      <div className="wrapper py-3 d-flex-justifi w-full">
         {/* Left - Logo & Name */}
         <Navbar />
         

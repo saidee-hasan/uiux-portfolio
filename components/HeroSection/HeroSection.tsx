@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import CustomButton from "../ui/CustomButton";
+import CustomButton from '@/components/ui/CustomButton'
 import { fadeLeft, fadeUp } from "@/lib/motionVariants";
 import { FolderArrowDownIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { CountsUp } from "./CountsUp";
@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <section className="section-continar">
       <div className="wrapper">
-        <div className="contentText">
+        <div className="contentText d-flex">
           {/* Text Content */}
           <motion.div
             {...fadeLeft}

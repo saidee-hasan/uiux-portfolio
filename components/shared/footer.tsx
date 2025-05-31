@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-background text-foreground border-t border-border py-6">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="wrapper d-flex-justifi gap-6">
         
         {/* Left: Copyright */}
         <p className="text-sm text-center md:text-left">
