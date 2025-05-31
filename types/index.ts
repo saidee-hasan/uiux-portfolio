@@ -18,6 +18,11 @@ export interface Blog {
 }
 
 //Section Title and subtitle
+
+export interface TitleProps {
+  heading: string
+}
+
 export interface SectionTitleProps {
   heading: string
   subHeading: string

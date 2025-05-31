@@ -1,4 +1,5 @@
 // components/shared/CustomCursor.tsx
+
 'use client'
 import AnimatedCursor from 'react-animated-cursor'
 

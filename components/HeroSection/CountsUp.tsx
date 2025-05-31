@@ -2,7 +2,6 @@
 import { StatItem } from '@/types';
 import CountUp from 'react-countup';
 
-
 const stats:  StatItem[] = [
     {
         num: 2,
@@ -12,10 +11,10 @@ const stats:  StatItem[] = [
         num: 26,
         text: "Projects completed",
     },
-    {
-        num: 10,
-        text: "Technologies mastered",
-    },
+    // {
+    //     num: 10,
+    //     text: "Technologies mastered",
+    // },
     {
         num: 500,
         text: "Code commits",
@@ -25,24 +24,21 @@ const stats:  StatItem[] = [
 
 export const CountsUp = () => {
   return (
-  <section className="py-8">
-  <div className="border rounded-lg p-6">
-    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+<section className="py-8">
+  <div className="border border-gray-800 bg-content/20 backdrop:blur-2xl shadow rounded-lg py-6 px-2">
+    <div className="grid grid-cols-2 md:grid-cols-3  gap-4 ">
       {stats.map(({ num, text }, index) => (
         <div
           key={index}
-          className="flex items-center gap-4 justify-center xl:justify-start"
+          className="flex items-center gap-2 justify-self-center-safe"
         >
           <CountUp
             end={num}
             duration={5}
             delay={0.5}
-            className="text-3xl md:text-4xl font-extrabold text-primary"
+            className="hero-title hero-title-color"
           />
-          <p
-            className={`text-sm md:text-base text-muted-foreground ${
-              text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-            }`}
+          <p className={`text-xs sm:text-sm md:text-base leading-tight`}
           >
             {text}
           </p>

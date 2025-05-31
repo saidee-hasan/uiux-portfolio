@@ -24,7 +24,7 @@
 
   --font-sans: 'Inter', sans-serif;
 
-   /* Animation utility classes */
+   /* Animation utility classNamees */
   --animate-spin-slow: spin 2s linear infinite;
   --animate-underline: underline 0.5s ease-in-out forwards;
   --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -83,25 +83,35 @@ a {
   }
   
   /* hero section start */
-  .section-continar {
-    @apply relative overflow-hidden bg-white dark:bg-black;
+  .header-section{
+    @apply fixed w-full z-50 backdrop:bg-white/50 dark:bg-content/30 backdrop-blur border-b border-gray-100 dark:border-gray-800 shadow overflow-hidden
   }
   .hero-container{
     @apply flex flex-col md:flex-row items-center min-h-screen gap-16
   }
   .contentText{
-    @apply flex flex-col-reverse md:flex-row items-center justify-between min-h-screen gap-12 md:gap-20 py-16
+    @apply flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 py-6
   }
   .hero-title {
-    @apply text-3xl md:text-5xl font-extrabold leading-tight bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent mb-4
+    @apply text-3xl md:text-5xl font-extrabold leading-tight 
   }
-  .hero-span {
-    @apply ml-2 bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent
+  .hero-title-color{
+     @apply bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent
   }
 /* hero section end */
-
+  .section-continar {
+    @apply relative overflow-hidden bg-white dark:bg-black pt-18;
+  }
   .section-title {
     @apply text-3xl font-bold mb-8 text-center text-foreground;
+  }
+  .heading-title-color {
+    @apply bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent font-bold
+  }
+
+  /* Header - border  */
+  .right-line{
+    @apply to-tertiary absolute top-[20px]  h-[1.5px] w-[100px] rounded from-transparent md:w-[150px] lg:w-[200px]
   }
 }
 

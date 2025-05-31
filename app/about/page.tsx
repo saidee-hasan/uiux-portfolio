@@ -1,12 +1,11 @@
-import SectionTitle from '@/components/shared/SectionTitle/SectionTitle'
+import Title from '@/components/shared/CustomStyle/Title/Title'
 
 
 export default function AboutPage() {
   return (
-       <SectionTitle
-          subHeading="---Don't miss---"
-          heading="TODAY'S OFFER"
-        ></SectionTitle>
+    <section className="section-continar">
+        <Title heading="About Us"></Title>
 
+    </section>
   )
 }

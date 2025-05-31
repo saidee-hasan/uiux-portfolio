@@ -3,11 +3,14 @@ import { motion } from "framer-motion";
 import CustomButton from "../ui/CustomButton";
 import { fadeLeft, fadeUp } from "@/lib/motionVariants";
 import { FolderArrowDownIcon, PhoneIcon } from "@heroicons/react/24/outline";
-import { CountsUp } from './CountsUp';
+import { CountsUp } from "./CountsUp";
+import Image from "next/image";
+import tasmiImg from "@/assets/tasmi.png";
+
 
 export default function HeroSection() {
   return (
-    <section className="section-container">
+    <section className="section-continar">
       <div className="wrapper">
         <div className="contentText">
           {/* Text Content */}
@@ -19,13 +22,13 @@ export default function HeroSection() {
             <motion.h1
               {...fadeUp}
               transition={fadeUp.transition(0.5)}
-              className="hero-title"
+              className="hero-title hero-title-color mb-4"
             >
               Full Stack
               <motion.span
                 {...fadeUp}
                 transition={fadeUp.transition(0.8)}
-                className="hero-span"
+                className="hero-title-color ml-2"
               >
                 Developer
               </motion.span>
@@ -50,8 +53,10 @@ export default function HeroSection() {
               <CustomButton
                 variant="outline"
                 icon={<PhoneIcon className="h-4 w-4" />}
-                onClick={() =>window.open("https://wa.me/8801581543966", "_blank")}
-                className="uppercase"
+                onClick={() =>
+                  window.open("https://wa.me/8801581543966", "_blank")
+                }
+                className="uppercase hidden md:block"
               >
                 Contact Me
               </CustomButton>
@@ -62,24 +67,22 @@ export default function HeroSection() {
                   <FolderArrowDownIcon className="h-4 w-4 animate-bounce" />
                 }
                 onClick={() => window.open("/resume.pdf", "_blank")}
-                className="uppercase hidden md:block"
+                className="uppercase "
               >
                 Download CV
               </CustomButton>
             </motion.div>
 
-              {/* Countup  */}
-          <div  className="">
-            <CountsUp />
-          </div>
-
+            {/* Countup  */}
+            <div className="">
+              <CountsUp />
+            </div>
           </motion.div>
 
-          {/* Image Content */}
+          {/* Image Section */}
           <div className="w-full md:w-1/2 flex justify-center animate-float">
-            <div className="w-[280px] h-[280px] rounded-full bg-gradient-to-tr from-primary to-tertiary shadow-xl" />
+            <Image src={tasmiImg} width={400} height={400} alt="avatar image" />
           </div>
-
         </div>
       </div>
     </section>

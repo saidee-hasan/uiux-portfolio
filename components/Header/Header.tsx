@@ -7,11 +7,11 @@ import Navbar from "../shared/navbar";
 const  Header = () => {
 
   return (
-    <motion.nav
+    <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed w-full z-50 backdrop:bg-white/50 dark:bg-content/30 backdrop-blur border-b border-gray-100 dark:border-gray-800 shadow overflow-hidden"
+      className="header-section"
     >
       <div className="wrapper py-3 flex w-full items-center justify-between">
         {/* Left - Logo & Name */}
@@ -23,7 +23,7 @@ const  Header = () => {
         </div>
         
       </div>
-    </motion.nav>
+    </motion.header>
   );
 };
 

@@ -40,7 +40,7 @@ export default function RootLayout({
         >
           <Header />
           <CustomCursor />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-[calc(100vh-69px)] ">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

@@ -34,7 +34,7 @@ export default function CustomButton({
     primary: 'bg-primary text-white hover:bg-primary/90',
     secondary: 'bg-secondary text-white hover:bg-secondary/90',
     outline:
-      'border border-white/10 text-contents hover:border-primary/30 bg-surface',
+      'border border-white/10 text-contents hover:border-primary/30 bg-surface leading-tight',
   }
 
   return (
