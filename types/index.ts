@@ -48,3 +48,16 @@ export interface BorderBeamProps {
   reverse?: boolean;
   initialOffset?: number;
 }
+
+// Service 
+export interface Service {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+// export interface ServicesCardProps {
+//   icon: React.ElementType;
+//   title: string;
+//   description: string;
+// };
+

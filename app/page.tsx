@@ -4,6 +4,9 @@ import AboutPage from "./about/page";
 import Blogs from "./blogs/page";
 import Projects from "./projects/page";
 import Faq from "@/components/Faq";
+import Service from "@/components/Services/Service";
+
+
 
 export default function Home() {
 
@@ -11,6 +14,7 @@ export default function Home() {
     <main>
        <HeroSection/>
        <AboutPage/>
+       <Service/>
        <Blogs/>
        <Projects />
        <Faq/>

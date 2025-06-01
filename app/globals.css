@@ -78,6 +78,11 @@ html{
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 .dark {
@@ -120,6 +125,11 @@ html{
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 @theme inline {
@@ -170,8 +180,6 @@ html{
   --animate-float: float 6s ease-in-out infinite;
   --animation-fade-in: fadeIn 0.5s ease-in-out;
   --animation-slide-up: slideUp 0.5s ease-in-out;
-
-
 
   @keyframes aurora {
     0% {
@@ -226,7 +234,21 @@ html{
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
-}
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  --color-color-5: var(--color-5);
+  --color-color-4: var(--color-4);
+  --color-color-3: var(--color-3);
+  --color-color-2: var(--color-2);
+  --color-color-1: var(--color-1)
+;
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
+    }
+  }}
 
 @layer base {
   * {
@@ -266,8 +288,6 @@ html{
 .rating svg {
   display: inline-block;
 }
-
-
 
 body {
   margin: 0;
@@ -342,7 +362,7 @@ a {
     @apply relative overflow-hidden bg-white dark:bg-black pt-18;
   }
   .section-title {
-    @apply text-3xl font-bold mb-8 text-center text-foreground;
+    @apply text-3xl md:text-5xl font-bold mb-8 text-center text-foreground;
   }
   .heading-title-color {
     @apply bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent font-bold

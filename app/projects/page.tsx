@@ -1,6 +1,9 @@
 import { FaGithub } from "react-icons/fa";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Link from "next/link";
+import { RainbowButton } from "@/components/magicui/rainbow-button";
+import CustomButton from "@/components/ui/CustomButton";
+import { ShinyButton } from "@/components/magicui/shiny-button";
 
 const Projects = () => {
   return (
@@ -23,6 +26,16 @@ const Projects = () => {
         duration={5}
         className="top-0 left-0"
       />
+
+      <RainbowButton variant="outline">
+        Rainbow
+      </RainbowButton>
+<ShinyButton>Shiny Button</ShinyButton>
+    <CustomButton variant="outline">
+               
+              Download CV
+    </CustomButton>
+
     </div>
   );
 };

@@ -13,7 +13,7 @@ export default function SectionTitle({ heading, subHeading}: SectionTitleProps) 
       <h3 className="section-title">
         {heading}
       </h3>
-      <p className="text-[#D99904] pb-2">{subHeading}</p>
+      <p className="text-content dark:text-gray-400 text-xl max-w-2xl  mx-auto pb-3">{subHeading}</p>
     </div>
   );
 }
