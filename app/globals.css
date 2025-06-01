@@ -23,7 +23,7 @@
 
   --font-sans: 'Inter', sans-serif;
 
-   /* Animation utility classNamees */
+
   --animate-spin-slow: spin 2s linear infinite;
   --animate-underline: underline 0.5s ease-in-out forwards;
   --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -53,7 +53,7 @@ html{
   --color-contents: #fafafa;
 
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  /* --secondary: oklch(0.97 0 0); */
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -352,6 +352,11 @@ a {
   .shimmerButton-span {
     @apply whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg
   }
+  .btnSocial {
+    @apply w-10 h-10 flex items-center justify-center rounded-full bg-black text-[#e6e6e6] font-semibold border transition duration-300
+  }
+
+
   .d-flex{
     @apply flex items-center
   }

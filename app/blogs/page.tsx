@@ -8,6 +8,7 @@ import { GithubIcon } from 'lucide-react';
 import { RainbowButton } from '@/components/magicui/rainbow-button';
 import { ShinyButton } from '@/components/magicui/shiny-button';
 import CustomButton from '@/components/ui/CustomButton';
+import { FaGithub, FaGlobe } from 'react-icons/fa';
 
 
 
@@ -44,6 +45,50 @@ const Blogs = () => {
   </span>
 </ShimmerButton>
 
+
+<button
+  className="px-6 py-2 rounded-full bg-[#e6e6e6] text-[#444] border border-[rgba(0,0,0,0.2)] font-semibold shadow-[inset_0.4rem_0.4rem_1rem_#ccc,inset_-0.4rem_-0.4rem_1rem_#fff] transition duration-300"
+>
+Full button
+</button>
+
+
+<button
+  className="w-12 h-12 flex items-center justify-center rounded-full bg-[#e6e6e6] text-[#444] border border-[rgba(0,0,0,0.2)] font-semibold shadow-[inset_0.4rem_0.4rem_1rem_#ccc,inset_-0.4rem_-0.4rem_1rem_#fff] transition duration-300"
+>
+   <FaGithub/> 
+  <FaGlobe />
+</button>
+
+<button
+  className="w-12 h-12 flex items-center justify-center rounded-full bg-[#e6e6e6] text-[#444] 
+  border-2 border-[#aaa] ring-2 ring-white 
+  shadow-[inset_0.4rem_0.4rem_1rem_#ccc,inset_-0.4rem_-0.4rem_1rem_#fff] 
+  transition duration-300"
+>
+  <GithubIcon className="w-5 h-5" />
+</button>
+
+
+<button
+  className="px-6 py-2 rounded-full bg-[#e6e6e6] text-[#444] shadow-[0.4rem_0.4rem_1rem_#ccc,-0.4rem_-0.4rem_1rem_#fff] border border-[rgba(0,0,0,0.2)] font-semibold hover:shadow-[inset_0.4rem_0.4rem_1rem_#ccc,inset_-0.4rem_-0.4rem_1rem_#fff] transition duration-300"
+>
+ <GithubIcon className="w-5 h-5" />
+</button>
+
+
+<button
+  className="btnSocial"
+>
+  <GithubIcon className="w-5 h-5" />
+</button>
+
+
+
+
+
+
+
    </div>
       <BorderBeam
         size={60}
@@ -62,6 +107,8 @@ const Blogs = () => {
     <CustomButton variant="outline">
       Download CV
     </CustomButton>
+
+    
 
    
         </section>
