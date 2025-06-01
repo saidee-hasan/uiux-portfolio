@@ -15,8 +15,8 @@ export default function Home() {
        <HeroSection/>
        <AboutPage/>
        <Service/>
-       <Blogs/>
        <Projects />
+       <Blogs/>
        <Faq/>
     </main>
   );

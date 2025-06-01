@@ -57,7 +57,7 @@ export default function CustomButton({
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-tertiary/10 opacity-0 group-hover:opacity-100 transition-opacity z-0" />
       )}
 
-      {/* Content */}
+      {/*Button Content */}
       <span className="relative z-10 text-sm flex items-center gap-1 group-hover:text-primary transition-colors">
         {icon && <span className="mr-2">{icon}</span>}
         {children}

@@ -35,9 +35,9 @@ export const services: Service[] = [
   },
   {
     icon: Gauge,
-    title: "Responsive Design",
+    title: "SEO Optimization",
     description:
-      "Creating fluid, adaptive layouts that provide a seamless experience across all devices and platforms.",
+      "Improve your website’s visibility with our SEO strategies, ensuring higher rankings and organic traffic growth.",
   },
   {
     icon: WrenchScrewdriverIcon,

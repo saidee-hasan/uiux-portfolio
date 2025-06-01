@@ -1,9 +1,22 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { BorderBeamProps } from "@/types";
+// import { BorderBeamProps } from "@/types";
 import { motion, MotionStyle} from "motion/react";
 
+import type { Transition } from "motion/react";
+type BorderBeamProps = {
+  size?: number;
+  duration?: number;
+  delay?: number;
+  colorFrom?: string;
+  colorTo?: string;
+  transition?: Transition;
+  className?: string;
+  style?: React.CSSProperties;
+  reverse?: boolean;
+  initialOffset?: number;
+}
 
 export const BorderBeam = ({
   className,

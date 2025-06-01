@@ -1,42 +1,42 @@
-import { FaGithub } from "react-icons/fa";
+
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Link from "next/link";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
-import CustomButton from "@/components/ui/CustomButton";
 import { ShinyButton } from "@/components/magicui/shiny-button";
+import SectionTitle from "@/components/shared/CustomStyle/SectionTitle/SectionTitle";
+import { projects } from "@/data/projects";
+import ProjestCard from "@/components/ProjestCard/ProjestCard";
 
 const Projects = () => {
   return (
-    <div className="relative w-fit">
-      {/* GitHub Icon with styling */}
-      <Link
-        href="https://github.com/wptasmina"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="z-10 relative p-3 rounded-full bg-content text-white dark:bg-white/5 hover:bg-primary/10 transition-colors"
-      >
-        <FaGithub className="w-5 h-5" />
-      </Link>
 
-      {/* BorderBeam Animation */}
-      <BorderBeam
-        size={60}
-        colorFrom="#0ea5e9"
-        colorTo="#ec4899"
-        duration={5}
-        className="top-0 left-0"
-      />
+    <section
+      id="project"
+      className="section-continar pt-4 pb-20 border"
+    >
+      <div className="wrapper">
+      <div className="text-center relative z-10 mb-10">
+        <ShinyButton>Project</ShinyButton>
+        <SectionTitle
+         heading="Showcase of My Work"
 
-      <RainbowButton variant="outline">
-        Rainbow
-      </RainbowButton>
-<ShinyButton>Shiny Button</ShinyButton>
-    <CustomButton variant="outline">
-               
-              Download CV
-    </CustomButton>
+         subHeading="Explore a collection of projects that showcase my growth and commitment to building impactful, user-focused web solutions."
+         ></SectionTitle>
+      </div>
 
+      <div className="relative z-10 d-grid gap-6">
+        {projects.map(({ title, description, technologies, githubLink, image }, index) => (
+          <ProjestCard
+            key={index}
+            title={title}
+            description={description}
+          />
+        ))}
+      </div>
     </div>
+
+
+    </section>
   );
 };
 

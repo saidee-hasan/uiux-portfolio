@@ -6,16 +6,17 @@ import ServicesCard from "./ServicesCard";
 import { ShinyButton } from "@/components/magicui/shiny-button";
 import { services } from "@/data/services"; 
 import SectionTitle from "../shared/CustomStyle/SectionTitle/SectionTitle";
+import { ServerIcon } from "@heroicons/react/24/outline";
 
  
-
 const Service = () => {
   return (
     <section
       id="services"
-      className="relative-overflo px-5 lg:px-8 xl:px-[8%]  bg-black"
+      className="section-continar pt-4 pb-20 border"
     >
-      <DotPattern
+      <div className="wrapper">
+        <DotPattern
         width={20}
         height={20}
         cx={1}
@@ -26,23 +27,17 @@ const Service = () => {
         )}
       />
 
-      <div className="text-center mb-20 relative z-10 mt-10">
+      <div className="text-center relative z-10 mb-10">
         <ShinyButton>Services</ShinyButton>
         <SectionTitle
          heading="Crafting Impactful Digital Experiences"
-         subHeading=" Turning bold ideas into beautiful, high-performance web solutions—
+
+         subHeading="Turning bold ideas into beautiful, high-performance web solutions—
           powered by modern technology and thoughtful design."
          ></SectionTitle>
-        {/* <h2 className="mt-3 ">
-          
-        </h2>
-        <p className="">
-         
-        </p> */}
-
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="relative z-10 d-grid gap-6">
         {services.map(({ icon, title, description }, index) => (
           <ServicesCard
             key={index}
@@ -52,6 +47,9 @@ const Service = () => {
           />
         ))}
       </div>
+    </div>
+
+
     </section>
   );
 };
