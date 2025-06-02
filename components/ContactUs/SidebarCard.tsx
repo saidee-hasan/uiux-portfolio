@@ -20,7 +20,6 @@ import {
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 
-
 export default function SidebarCard() {
   const { theme } = useTheme();
   return (
@@ -56,25 +55,39 @@ export default function SidebarCard() {
                   </div>
 
                   {/* <div className="mt-4 border p-4"> */}
-                    <div className="mt-4 border-t py-2 bg-black flex flex-row items-center justify-center space-x-2">
-                      {[
-                        { icon: IconBrandGithub },
-                        { icon: IconBrandFacebook },
-                        { icon: IconBrandInstagram },
-                        { icon: IconBrandLinkedin },
-                      ].map(({ icon: Icon }, index) => (
-                        <button
-                          key={index}
-                          className="group/btn h-8 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626] relative"
-                          type="button"
-                        >
-                          <Icon className="h-5 w-5 text-neutral-800 dark:text-neutral-300" />
-                          <BottomGradient />
-                        </button>
-                      ))}
-                    </div>
+                  <div className="mt-4 border-t py-2 bg-black flex flex-row items-center justify-center space-x-2">
+                    {[
+                      {
+                        icon: IconBrandGithub,
+                        url: "https://github.com/wptasmina",
+                      },
+                      {
+                        icon: IconBrandFacebook,
+                        url: "https://facebook.com/wp-tasmina",
+                      },
+                      {
+                        icon: IconBrandInstagram,
+                        url: "https://instagram.com/wp-tasmina",
+                      },
+                      {
+                        icon: IconBrandLinkedin,
+                        url: "https://www.linkedin.com/in/wptasmina",
+                      },
+                    ].map(({ icon: Icon, url }, index) => (
+                      <a
+                        key={index}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn h-8 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626] relative"
+                        type="button"
+                      >
+                        <Icon className="h-5 w-5 text-neutral-800 dark:text-neutral-300" />
+                        <BottomGradient />
+                      </a>
+                    ))}
+                  </div>
                   {/* </div> */}
-
                 </div>
                 {/* Two columns below on medium screens  */}
                 <div className="border p-4 rounded-md md:col-span-2 shadow">

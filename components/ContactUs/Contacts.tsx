@@ -1,18 +1,7 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { BorderBeam } from "@/components/magicui/border-beam";
 import { ShinyButton } from "@/components/magicui/shiny-button";
 import SectionTitle from "@/components/shared/CustomStyle/SectionTitle/SectionTitle";
 import SignupFormDemo from "../signup-form-demo";
+
 
 export default function Contacts() {
   return (
@@ -28,6 +17,7 @@ export default function Contacts() {
       
       {/* forom  */}
        <SignupFormDemo/>
+
     </div>
     </div>
 </section>
