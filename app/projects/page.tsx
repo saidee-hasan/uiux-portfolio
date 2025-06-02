@@ -1,5 +1,6 @@
+//components/Projecst/AllProject
+import AllProject from "@/components/Projects/AllProject";
 
-import AllProject from "@/components/Projests/AllProject";
 
 const ProjectsPage = () => {
   return (

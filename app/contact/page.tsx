@@ -1,7 +1,9 @@
+import Contacts from "@/components/ContactUs/Contacts";
 
-
-export default function Contact() {
+export default function ContactPage() {
   return (
-    <div classNameName="">Contact page</div>
+    <>
+      <Contacts/>
+    </>
   )
 }

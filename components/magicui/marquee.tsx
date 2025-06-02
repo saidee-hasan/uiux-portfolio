@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { ComponentPropsWithoutRef } from "react";
 
 interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
+ 
   className?: string;
   reverse?: boolean;
   pauseOnHover?: boolean;

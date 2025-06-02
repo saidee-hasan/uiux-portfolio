@@ -1,7 +1,7 @@
 import { ShinyButton } from "@/components/magicui/shiny-button";
 import SectionTitle from "@/components/shared/CustomStyle/SectionTitle/SectionTitle";
 import { projects } from "@/data/projects";
-import { ProjestCard } from "@/components/Projests/ProjestCard";
+import { ProjestCard } from "@/components/Projects/ProjestCard";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ const Projects = () => {
         {/* AllProject button  */}
         <div className="text-center mt-12">
           <Link href="/projects">
-            <RainbowButton variant="outline">See All Project</RainbowButton>
+            <RainbowButton variant="outline">See All Projects</RainbowButton>
           </Link>
         </div>
       </div>

@@ -23,7 +23,6 @@
 
   --font-sans: 'Inter', sans-serif;
 
-
   --animate-spin-slow: spin 2s linear infinite;
   --animate-underline: underline 0.5s ease-in-out forwards;
   --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -251,7 +250,7 @@ html{
   }
   --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
-  
+
   @keyframes shimmer-slide {
   to {
     transform: translate(calc(100cqw - 100%), 0);
@@ -269,6 +268,22 @@ html{
     }
   100% {
     transform: translateZ(0) rotate(360deg);
+    }
+  }
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
     }
   }}
 
@@ -355,7 +370,6 @@ a {
   .btnSocial {
     @apply w-10 h-10 flex items-center justify-center rounded-full bg-black text-[#e6e6e6] font-semibold border transition duration-300
   }
-
 
   .d-flex{
     @apply flex items-center

@@ -13,7 +13,7 @@ export default function SectionTitle({ heading, subHeading}: SectionTitleProps) 
       <h2 className="section-title">
         {heading}
       </h2>
-      <p className="section-desc">{subHeading}</p>
+      <p className="section-desc text-center">{subHeading}</p>
     </section>
   );
 }

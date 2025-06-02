@@ -13,7 +13,7 @@ const Service = () => {
   return (
     <section
       id="services"
-      className="section-continar pt-4 pb-20 border"
+      className="section-continar pt-4 pb-20"
     >
       <div className="wrapper">
         <DotPattern
@@ -34,22 +34,16 @@ const Service = () => {
 
          subHeading="Turning bold ideas into beautiful, high-performance web solutions—
           powered by modern technology and thoughtful design."
-         ></SectionTitle>
+         />
       </div>
 
-      <div className="relative z-10 d-grid gap-6">
-        {services.map(({ icon, title, description }, index) => (
-          <ServicesCard
-            key={index}
-            icon={icon}
-            title={title}
-            description={description}
+      <div className="d-grid gap-6">
+        {services.map((service, index) => (
+          <ServicesCard key={index} {...service}
           />
         ))}
       </div>
     </div>
-
-
     </section>
   );
 };
