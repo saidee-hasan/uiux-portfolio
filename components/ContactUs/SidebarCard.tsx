@@ -39,7 +39,10 @@ export default function SidebarCard() {
 
                 {/* Two columns below on medium screens */}
                 <div className="border p-4 rounded-md md:col-span-2 shadow text-center">
-                  Credentials to access
+                  <div className="w-16 h-16 mx-auto flex items-center justify-center border-2 border-dashed rounded-full">
+                    <IconMapPin className="w-6 h-6 " />
+                </div>
+                 social Icin
                 </div>
                  {/* Two columns below on medium screens  */}
                 <div className="border p-4 rounded-md md:col-span-2 shadow">Access your account</div>
