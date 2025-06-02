@@ -25,7 +25,7 @@ export default function SidebarCard() {
   const { theme } = useTheme();
   return (
     <>
-      {/* Login Section (MagicCard) */}
+      {/*Contact Section (MagicCard) */}
       <div className="mx-auto w-full max-w-md bg-none">
         <Card className="border-none shadow-lg">
           <MagicCard
