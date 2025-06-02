@@ -33,9 +33,9 @@ export default function SidebarCard() {
             className="p-0"
           >
             <CardHeader className="border-b p-4">
-              <CardTitle>Login</CardTitle>
+              <CardTitle className="pt-5">Enter</CardTitle>
               <CardDescription>
-                Enter your credentials to access your account
+                Search social media and email to contact me.
               </CardDescription>
             </CardHeader>
 
@@ -56,7 +56,7 @@ export default function SidebarCard() {
                   </div>
 
                   {/* <div className="mt-4 border p-4"> */}
-                    <div className="mt-4 border py-2 bg-black flex flex-row items-center justify-center space-x-2">
+                    <div className="mt-4 border-t py-2 bg-black flex flex-row items-center justify-center space-x-2">
                       {[
                         { icon: IconBrandGithub },
                         { icon: IconBrandFacebook },
