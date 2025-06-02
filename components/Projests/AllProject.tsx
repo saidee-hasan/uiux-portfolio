@@ -1,20 +1,24 @@
-import { RainbowButton } from '@/components/magicui/rainbow-button';
-import Link from "next/link";
 
+import { projects } from '@/data/projects';
+import { ProjestCard } from './ProjestCard';
 
 export default function AllProject() {
   return (
     <>
-   
+    <section className='section-continar py-20'>
+      <div className='wrapper'>
+        <h2 className='text-3xl text-center font-bold mb-8'>All Project</h2>
 
-    
-      <div className="text-center mt-12">
-        <Link herf="/projects">
-            <RainbowButton variant="outline">
-              AllProject
-          </RainbowButton>
-        </Link>
+         {/* More content here */}
+          <div className="d-grid gap-6 shadow-2xl">
+            {projects.map((project, index) => (
+              <ProjestCard key={index} {...project} />
+            ))}
+          </div>
+        
       </div>
+    </section>
+      
     </>
   )
 }
