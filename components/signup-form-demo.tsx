@@ -65,23 +65,6 @@ export default function SignupFormDemo() {
 
           <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
 
-          <div className="flex flex-col space-y-4">
-            {[
-              { icon: IconBrandGithub, label: "GitHub" },
-              { icon: IconBrandGoogle, label: "Google" },
-              { icon: IconBrandOnlyfans, label: "OnlyFans" },
-            ].map(({ icon: Icon, label }, index) => (
-              <button
-                key={index}
-                className="group/btn relative flex h-10 w-full items-center gap-2 rounded-md bg-gray-50 px-4 text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
-                type="button"
-              >
-                <Icon className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-                <span className="text-sm text-neutral-700 dark:text-neutral-300">{label}</span>
-                <BottomGradient />
-              </button>
-            ))}
-          </div>
         </form>
       </div>
 
