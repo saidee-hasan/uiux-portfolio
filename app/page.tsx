@@ -11,12 +11,13 @@ import ContactPage from "./contact/page";
 
 
 
+
 export default function Home() {
 
   return (
     <main>
        <HeroSection/>
-       <AboutPage/>
+       {/* <AboutPage/> */}
        <Service/>
        <Projects />
        <Skills/>
@@ -24,6 +25,7 @@ export default function Home() {
        <Reviews/>
        <Faq/>
        <ContactPage/>
+
     </main>
   );
 }

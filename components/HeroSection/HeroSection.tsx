@@ -10,7 +10,7 @@ import tasmiImg from "@/assets/tasmi.png";
 
 export default function HeroSection() {
   return (
-    <section className="section-continar">
+    <section className="section-continar pt-20">
       <div className="wrapper">
         <div className="contentText d-flex">
           {/* Text Content */}

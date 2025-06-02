@@ -119,11 +119,11 @@ export function TimelineDemo() {
 
 
   return (
-    <section id="timeline" className="py-16 bg-background text-foreground relative w-full overflow-clip">
+    <section id="timeline" className=" bg-background text-foreground relative w-full overflow-clip">
       <div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">
+        {/* <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">
           My Web Development Journey
-        </h2>
+        </h2> */}
         <Timeline data={data} />
       </div>
     </section>

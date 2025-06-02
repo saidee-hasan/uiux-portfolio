@@ -4,7 +4,7 @@ import { MarqueeDemo } from './MarqueeDemo'
 export default function Reviews() {
   return (
     <div>
-          <MarqueeDemo/>
+      <MarqueeDemo/>
     </div>
   )
 }
