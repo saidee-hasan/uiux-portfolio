@@ -6,6 +6,8 @@ import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/shared/Footer";
 
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
