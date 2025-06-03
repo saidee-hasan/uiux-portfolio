@@ -63,11 +63,11 @@ export default function SidebarCard() {
                       },
                       {
                         icon: IconBrandFacebook,
-                        url: "https://facebook.com/wp-tasmina",
+                        url: "https://facebook.com/wptasmina",
                       },
                       {
                         icon: IconBrandInstagram,
-                        url: "https://instagram.com/wp-tasmina",
+                        url: "https://instagram.com/wptasmina",
                       },
                       {
                         icon: IconBrandLinkedin,
