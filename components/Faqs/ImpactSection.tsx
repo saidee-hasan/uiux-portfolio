@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { ShinyButton } from "../magicui/shiny-button";
 
 const imageSets: Record<string, string> = {
   skill: "/images/skill.webp",
@@ -56,18 +57,24 @@ export default function ImpactSection() {
   return (
     <section className="py-20 dark:bg-zinc-950 bg-white" id="impact">
       <div className="wrapper ">
-        <div className="text-center pb-8">
-          <h2 className="bg-gradient-to-r from-orangeDark to-orangeDark bg-clip-text text-transparent text-4xl font-bold">
-            Impact That Matters
-          </h2>
-          <div className="relative mx-auto mt-2 h-[1.5px] w-40 rounded bg-gradient-to-r from-transparent to-tertiary md:w-60 lg:w-80" />
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-textBg sm:text-base">
-            Every number reflects a life uplifted, a voice heard, and a future
-            transformed...
-          </p>
-        </div>
-
         <div className="grid gap-5 md:grid-cols-2">
+
+            {/* Image Display */}
+          <div className="image-box h-fit w-full space-y-4">
+             <ShinyButton>FAQ Section</ShinyButton>
+            <div>
+                <h2 className="md:text-5xl text-3x text-zinc-900 dark:text-white pb-4">Questions, <span className="text-neutral-500">Answers</span></h2>
+                <p className="text-neutral-300 font-medium text-sm">Git quick answer to your most pressing questions</p>
+            </div>
+            <Image
+              src={imageSets[active]}
+              alt={`${active} image`}
+              width={500}
+              height={500}
+              className="w-full rounded-lg object-cover"
+            />
+          </div>
+
           {/* Accordion */}
           <div className="space-y-4">
             {accordionData.map((item) => (
@@ -115,17 +122,6 @@ export default function ImpactSection() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Image Display */}
-          <div className="image-box h-fit w-full">
-            <Image
-              src={imageSets[active]}
-              alt={`${active} image`}
-              width={500}
-              height={500}
-              className="w-full rounded-lg object-cover"
-            />
           </div>
         </div>
       </div>
