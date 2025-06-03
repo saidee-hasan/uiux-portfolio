@@ -58,7 +58,6 @@ export default function ImpactSection() {
     <section className="py-20 dark:bg-zinc-950 bg-white" id="impact">
       <div className="wrapper ">
         <div className="grid gap-5 md:grid-cols-2">
-
             {/* Image Display */}
           <div className="image-box h-fit w-full space-y-4">
              <ShinyButton>FAQ Section</ShinyButton>
