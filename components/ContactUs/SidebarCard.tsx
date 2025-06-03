@@ -18,7 +18,7 @@ import {
   IconMailSpark,
   IconBrandGithub,
 } from "@tabler/icons-react";
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 
 export default function SidebarCard() {
   const { theme } = useTheme();
@@ -112,16 +112,3 @@ const BottomGradient = () => (
   </>
 );
 
-const LabelInputContainer = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("flex w-full flex-col space-y-2", className)}>
-      {children}
-    </div>
-  );
-};

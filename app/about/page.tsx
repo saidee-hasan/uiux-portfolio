@@ -2,7 +2,7 @@ import Title from '@/components/shared/CustomStyle/Title/Title'
 import CustomButton from '@/components/ui/CustomButton'
 
 
-export default function AboutPage() {
+ const AboutPage =()=> {
   return (
     <section className="section-continar">
         <Title heading="About Us"></Title>
@@ -11,4 +11,5 @@ export default function AboutPage() {
        
     </section>
   )
-}
+} 
+export default  AboutPage

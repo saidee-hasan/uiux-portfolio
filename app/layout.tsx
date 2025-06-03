@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "@/components/shared/CustomCursor";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/shared/Footer";
 
 
 
@@ -42,7 +43,7 @@ export default function RootLayout({
           <Header />
           <CustomCursor />
           <main className="min-h-[calc(100vh-69px)] ">{children}</main>
-
+          <Footer/>
         </ThemeProvider>
       </body>
     </html>
