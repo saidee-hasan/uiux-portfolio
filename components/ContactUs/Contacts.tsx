@@ -9,9 +9,9 @@ export default function Contacts() {
       <div className="wrapper bg-black/60">
         <div className="text-center relative z-10 mb-10">
 
-        <ShinyButton>Contact</ShinyButton>
+        <ShinyButton>Let's Contact</ShinyButton>
         <SectionTitle
-        heading="ContactUs"
+        heading="Let’s Collaborate and Begin the work"
         subHeading="Explore a collection of projects that showcase my growth and commitment to building impactful, user-focused web solutions."
         />
       
