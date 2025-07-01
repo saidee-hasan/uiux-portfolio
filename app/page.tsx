@@ -6,6 +6,7 @@ import Projects from "@/components/Projects/Projects";
 
 import Reviews from "@/components/Review/Reviews";
 import ContactPage from "./contact/page";
+import Developer from "../components/developer/Developer";
 
 
 
@@ -16,6 +17,7 @@ export default function Home() {
     <main>
        <HeroSection/>
        {/* <AboutPage/> */}
+       <Developer/>
        <Service/>
        <Projects />
   

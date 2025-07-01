@@ -39,7 +39,7 @@ export default function SidebarCard() {
                 <div className="w-16 h-16 mx-auto flex items-center justify-center border-2 border-dashed shadow-xl rounded-full">
                   <IconBuildingCommunity className="w-6 h-6" />
                 </div>
-                <div className="mt-4">Sylhet, Bangladesh</div>
+                <div className="mt-4">Bangladesh</div>
               </div>
 
               {/* Two columns below on medium screens and icons */}
@@ -52,19 +52,19 @@ export default function SidebarCard() {
                   {[
                     {
                       icon: IconBrandGithub,
-                      url: "https://github.com/wptasmina",
+                      url: "https://github.com",
                     },
                     {
                       icon: IconBrandFacebook,
-                      url: "https://facebook.com/wptasmina",
+                      url: "https://facebook.com",
                     },
                     {
                       icon: IconBrandInstagram,
-                      url: "https://instagram.com/wptasmina",
+                      url: "https://instagram.com",
                     },
                     {
                       icon: IconBrandLinkedin,
-                      url: "https://www.linkedin.com/in/wptasmina",
+                      url: "https://www.linkedin.com",
                     },
                   ].map(({ icon: Icon, url }, index) => (
                     <a

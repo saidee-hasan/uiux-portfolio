@@ -4,9 +4,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["avatar.vercel.sh"],
   },
-  // eslint: {
-  //   ignoreDuringBuilds: true,
-  // },
+  output: "export", 
 };
 
 export default nextConfig;
