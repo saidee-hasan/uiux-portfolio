@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/shared/CustomCursor";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import Header from "../components/Header/Header";
 import Footer from "../components/shared/footer";
@@ -42,7 +41,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header/>
-          <CustomCursor />
           <main className="min-h-[calc(100vh-69px)] ">{children}</main>
           <Footer/>
         </ThemeProvider>

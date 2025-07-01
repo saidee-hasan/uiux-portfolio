@@ -12,7 +12,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import ModeToggle from "./shared/ModeToggle";
 import { motion } from "motion/react";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export function SheetDemo() {
   const menuItems = [
@@ -24,8 +24,8 @@ export function SheetDemo() {
   ];
 
   const socialLinks = {
-    github: "https://github.com/wptasmina",
-    linkedin: "https://www.linkedin.com/in/wptasmina",
+   instagram:"https://www.instagram.com/ui_verse_1/",
+    linkedin: "https://www.linkedin.com/in/uiverse",
   };
 
   return (
@@ -38,7 +38,7 @@ export function SheetDemo() {
 
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className="text-lg font-semibold">Tasmina</SheetTitle>
+          <SheetTitle className="text-lg font-semibold">Ui verse</SheetTitle>
         </SheetHeader>
 
         {/* Menu items */}
@@ -83,11 +83,11 @@ export function SheetDemo() {
         >
           <ModeToggle />
           <Link
-            href={socialLinks.github}
+            href={socialLinks.instagram}
             target="_blank"
             className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
           >
-            <FaGithub className="h-5 w-5 text-white group-hover:text-primary" />
+            <FaInstagram className="h-5 w-5 text-white group-hover:text-primary" />
           </Link>
           <Link
             href={socialLinks.linkedin}
