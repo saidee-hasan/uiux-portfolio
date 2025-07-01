@@ -39,7 +39,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full flex items-center justify-between px-4 md:px-10 py-4">
+    <nav className="w-full flex items-center justify-between px-4  rounded-md py-0 bg-white dark:bg-black">
       {/* Left - Logo with theme awareness */}
       <motion.div
         whileHover={{ scale: 1.05 }}
@@ -58,14 +58,14 @@ const Navbar = () => {
       </motion.div>
 
       {/* Middle - Navigation Menu */}
-      <div className="hidden md:flex items-center justify-center gap-4 md:w-1/3 dark:bg-background py-2 border border-gray-100 dark:border-gray-800 rounded-full">
+      <div className="hidden md:flex items-center justify-center gap-4 md:w-1/3 py-2 border border-gray-100 dark:border-gray-800 rounded-full">
         {menuItems.map(({ label, href }, index) => {
           const isActive = pathname === href;
           return (
             <motion.div
               key={href}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: -20 }}
+              animate={{ y: 0 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{
@@ -109,15 +109,14 @@ const Navbar = () => {
         ))}
 
         {/* ✅ Book A Call Button */}
-       <Link
-  href="/call"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-gray-800"
->
-  Book A Call
-</Link>
-
+        <Link
+          href="/call"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-gray-800"
+        >
+          Book A Call
+        </Link>
 
         {/* Theme Toggle */}
         <ModeToggle />
