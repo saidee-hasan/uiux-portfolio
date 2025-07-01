@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  //  eslint: {
+  images: {
+    domains: ["avatar.vercel.sh"],
+  },
+  // eslint: {
   //   ignoreDuringBuilds: true,
   // },
 };

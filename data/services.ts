@@ -9,18 +9,19 @@ import {
 } from "lucide-react";
 
 export const services: Service[] = [
+    {
+    icon: Palette,
+    title: "UI/UX Design",
+    description:
+      "Crafting beautiful, intuitive interfaces that deliver exceptional user experiences and drive engagement.",
+  },
   {
     icon: Code2,
     title: "Custom Web Development",
     description:
       "Building fast, responsive web apps with modern technologies and best practices.",
   },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description:
-      "Crafting beautiful, intuitive interfaces that deliver exceptional user experiences and drive engagement.",
-  },
+
   {
     icon: Rocket,
     title: "Performance Optimization",

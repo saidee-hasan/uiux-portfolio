@@ -1,71 +1,88 @@
+"use client";
+
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Image from "next/image";
 import { Project } from "@/types";
-import { FaGithub, FaGlobe } from "react-icons/fa";
-import Link from "next/link";
+import { useState } from "react";
 
 export function ProjestCard({
   title,
   description,
-  technologies,
-  githubLink,
-  demoLink,
   image,
+  preview,
 }: Project) {
+  const [showPreview, setShowPreview] = useState(false);
+
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      setShowPreview(false);
+    }
+  };
+
   return (
-    <Card className="relative w-[350px] overflow-hidden flex flex-col">
-      <CardHeader>
-        <Image
-          src={image}
-          width={500}
-          height={500}
-          alt={title}
-          className="pb-4 rounded-t-lg"
-        />
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-wrap gap-2">
-        {technologies.map((tech, index) => (
-          <Button key={index} variant="outline" className="text-xs">
-            {tech}
-          </Button>
-        ))}
-      </CardContent>
-      <CardFooter className="flex flex-wrap gap-2 mt-auto">
-        <div className="flex items-center gap-4">
-          <Link href={githubLink} target="_blank" rel="noopener noreferrer">
-            <button
-              className="btnSocial shadow-[0.05rem_0.05rem_0.1rem_#ccc,-0.05rem_-0.05rem_0.1rem_#fff] 
-              border-[rgba(0,0,0,0.2)]  
-             hover:shadow-[inset_0.05rem_0.05rem_0.1rem_#ccc,inset_-0.05rem_-0.05rem_0.1rem_#fff] "
-            >
-              <FaGithub className="w-5 h-5" />
-            </button>
-          </Link>
+    <>
+      {/* Project Card */}
+      <Card className="relative w-[350px] overflow-hidden flex flex-col">
+        <CardHeader className="p-0">
+          <div className="w-full">
+            <Image
+              src={image}
+              alt={title}
+              width={350}
+              height={240}
+              className="w-full h-60 rounded-t-lg object-cover"
+              priority
+            />
+          </div>
+          <div className="p-4">
+            <CardTitle>{title}</CardTitle>
+            <CardDescription>{description}</CardDescription>
+          </div>
+        </CardHeader>
 
-          <Link href={demoLink} target="_blank" rel="noopener noreferrer">
+        <CardFooter className="mt-auto flex justify-center pb-4">
+          <button
+            onClick={() => setShowPreview(true)}
+            className="bg-black text-white border border-white px-6 py-2 rounded-md font-semibold text-sm transition-all duration-300 ease-in-out shadow-[0_8px_16px_rgba(0,0,0,0.3),_0_4px_6px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),_0_6px_8px_rgba(0,0,0,0.3)] hover:scale-[1.05]"
+          >
+            Live Preview
+          </button>
+        </CardFooter>
+
+        <BorderBeam duration={8} size={100} />
+      </Card>
+
+      {/* Image Preview Modal */}
+      {showPreview && (
+        <div
+          className="fixed inset-0 mt-14 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={handleBackdropClick}
+        >
+          <div className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg z-[9999]">
+            <Image
+              src={preview || image}
+              alt={title}
+              width={1200}
+              height={700}
+              className="w-full h-auto rounded-lg z-50 shadow-2xl"
+            />
             <button
-              className="btnSocial shadow-[0.05rem_0.05rem_0.1rem_#ccc,-0.05rem_-0.05rem_0.1rem_#fff] 
-              border-[rgba(0,0,0,0.2)]  
-             hover:shadow-[inset_0.05rem_0.05rem_0.1rem_#ccc,inset_-0.05rem_-0.05rem_0.1rem_#fff] "
+              onClick={() => setShowPreview(false)}
+              className="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-400 z-[10000]"
+              aria-label="Close Preview"
             >
-              <FaGlobe className="w-5 h-5" />
+              ✕
             </button>
-          </Link>
+          </div>
         </div>
-      </CardFooter>
-
-      <BorderBeam duration={8} size={100} />
-    </Card>
+      )}
+    </>
   );
 }

@@ -1,13 +1,5 @@
 // index.ts 
 
-export interface Project {
-    title: string,
-    description: string,
-    technologies: string[],
-    githubLink: string,
-    demoLink: string,
-    image: string,
-}
 
 export interface Blog {
     title: string,
@@ -61,3 +53,13 @@ export interface Service {
 //   description: string;
 // };
 
+// @/types/index.ts
+
+// ./types/index.ts
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  preview?: string;
+
+}

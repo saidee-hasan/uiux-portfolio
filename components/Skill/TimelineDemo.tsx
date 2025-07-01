@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 import { AnimatedListDemo } from "./AnimatedListDemo";
 
 export function TimelineDemo() {
   const data = [
-      {
+    {
       title: "2025 – Full Stack Apps",
       content: (
         <div>
@@ -19,14 +20,18 @@ export function TimelineDemo() {
             <li>✅ Cloud & CI/CD Integration</li>
           </ul>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/projects/chat-app.png"
               alt="Chat App"
+              width={600}
+              height={400}
               className="rounded-xl w-full h-28 md:h-44 lg:h-56 object-cover shadow-md"
             />
-            <img
+            <Image
               src="/projects/recipe-finder.png"
               alt="Recipe Finder"
+              width={600}
+              height={400}
               className="rounded-xl w-full h-28 md:h-44 lg:h-56 object-cover shadow-md"
             />
           </div>
@@ -41,14 +46,18 @@ export function TimelineDemo() {
             Engineered scalable APIs using Node.js, Express, and MongoDB. Integrated real-time functionality using WebSockets.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/projects/chat-app.png"
               alt="Chat App"
+              width={600}
+              height={400}
               className="rounded-xl w-full h-28 md:h-44 lg:h-56 object-cover shadow-md"
             />
-            <img
+            <Image
               src="/projects/recipe-finder.png"
               alt="Recipe App"
+              width={600}
+              height={400}
               className="rounded-xl w-full h-28 md:h-44 lg:h-56 object-cover shadow-md"
             />
           </div>
@@ -63,21 +72,25 @@ export function TimelineDemo() {
             Specialized in modern UI frameworks including React, Next.js, and Tailwind CSS. Built responsive, accessible, and high-performing web interfaces.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/projects/portfolio-website.jpg"
               alt="Portfolio"
+              width={600}
+              height={400}
               className="rounded-xl w-full h-28 md:h-44 lg:h-56 object-cover shadow-md"
             />
-            <img
+            <Image
               src="/projects/task-manager.webp"
               alt="Task Manager"
+              width={600}
+              height={400}
               className="rounded-xl w-full h-28 md:h-44 lg:h-56 object-cover shadow-md"
             />
           </div>
         </div>
       ),
     },
-     {
+    {
       title: "2022 – Design & Optimization",
       content: (
         <div>
@@ -90,14 +103,18 @@ export function TimelineDemo() {
             <li>🧠 Mastered animation using Framer Motion</li>
           </ul>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/projects/e-commerce-website.png"
               alt="E-commerce Site"
+              width={600}
+              height={400}
               className="rounded-xl w-full h-28 md:h-44 lg:h-56 object-cover shadow-md"
             />
-            <img
+            <Image
               src="/projects/expense-tracker.webp"
               alt="Tracker"
+              width={600}
+              height={400}
               className="rounded-xl w-full h-28 md:h-44 lg:h-56 object-cover shadow-md"
             />
           </div>
@@ -115,15 +132,14 @@ export function TimelineDemo() {
         </div>
       ),
     },
-];
-
+  ];
 
   return (
-    <section id="timeline" className=" bg-background text-foreground relative w-full overflow-clip">
+    <section
+      id="timeline"
+      className="bg-background text-foreground relative w-full overflow-clip"
+    >
       <div>
-        {/* <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">
-          My Web Development Journey
-        </h2> */}
         <Timeline data={data} />
       </div>
     </section>

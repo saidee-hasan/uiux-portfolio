@@ -3,8 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/shared/CustomCursor";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/shared/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/shared/footer";
+
 
 
 
@@ -19,8 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tasmina Portfolio",
-  description: "Created by Tasmina Akter",
+  title: "uiverse",
+  description: "Created by Saidee Hasan",
 };
 
 
@@ -40,7 +41,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
+          <Header/>
           <CustomCursor />
           <main className="min-h-[calc(100vh-69px)] ">{children}</main>
           <Footer/>

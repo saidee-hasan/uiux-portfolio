@@ -1,12 +1,19 @@
+// HeroSection.tsx
+
 "use client";
 import { motion } from "framer-motion";
-import CustomButton from '@/components/ui/CustomButton'
+import CustomButton from "@/components/ui/CustomButton";
 import { fadeLeft, fadeUp } from "@/lib/motionVariants";
-import { FolderArrowDownIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { CountsUp } from "./CountsUp";
-import Image from "next/image";
-import tasmiImg from "@/assets/tasmi.png";
+import dynamic from "next/dynamic"; // ✅ dynamic import
+import animationData from "@/assets/hero.json";
+import { PhoneIcon } from "@heroicons/react/24/outline";
 
+// ✅ Dynamically import Lottie Player
+const LottiePlayer = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then(mod => mod.Player),
+  { ssr: false }
+);
 
 export default function HeroSection() {
   return (
@@ -24,13 +31,13 @@ export default function HeroSection() {
               transition={fadeUp.transition(0.5)}
               className="hero-title hero-title-color mb-4"
             >
-              Full Stack
+             Creative UI UX
               <motion.span
                 {...fadeUp}
                 transition={fadeUp.transition(0.8)}
                 className="hero-title-color ml-2"
               >
-                Developer
+                 Design Agency 
               </motion.span>
             </motion.h1>
 
@@ -39,10 +46,9 @@ export default function HeroSection() {
               transition={fadeUp.transition(1.1)}
               className="text-md md:text-lg text-content dark:text-foreground/80 mb-6 leading-relaxed"
             >
-              Specializing in React, Node.js, Next.js, and Cloud Architecture.
-              Experienced in building robust, scalable, and SEO-optimized web
-              applications using modern full-stack technologies and cloud-native
-              solutions.
+             Helping startups and brands stand out through smart design.
+We turn ideas into sleek, functional, user-validated interfaces.
+UI/UX that delivers results, not just pretty pixels.
             </motion.p>
 
             <motion.div
@@ -54,34 +60,28 @@ export default function HeroSection() {
                 variant="outline"
                 icon={<PhoneIcon className="h-4 w-4" />}
                 onClick={() =>
-                  window.open("https://wa.me/8801581543966", "_blank")
+                  window.open("/call")
                 }
                 className="uppercase hidden md:block"
               >
-                Contact Me
-              </CustomButton>
-
-              <CustomButton
-                variant="outline"
-                icon={
-                  <FolderArrowDownIcon className="h-4 w-4 animate-bounce" />
-                }
-                onClick={() => window.open("/resume.pdf", "_blank")}
-                className="uppercase "
-              >
-                Download CV
+                Book A call 
               </CustomButton>
             </motion.div>
 
-            {/* Countup  */}
+            {/* Countup */}
             <div className="">
               <CountsUp />
             </div>
           </motion.div>
 
-          {/* Image Section */}
+          {/* ✅ Client-side-only Lottie Animation */}
           <div className="w-full md:w-1/2 flex justify-center animate-float">
-            <Image src={tasmiImg} width={400} height={400} alt="avatar image" />
+            <LottiePlayer
+              autoplay
+              loop
+              src={animationData}
+              style={{ height: 400, width: 400 }}
+            />
           </div>
         </div>
       </div>

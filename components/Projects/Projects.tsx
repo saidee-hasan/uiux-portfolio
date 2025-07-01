@@ -7,26 +7,25 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <section id="project" className="section-continar pt-4 pb-20 ">
-      <div className="wrapper bg-black/60">
+    <section id="project" className="section-continar pt-4 pb-20">
+      <div className="wrapper ">
         <div className="text-center relative z-10 mb-10">
-          <ShinyButton>Project</ShinyButton>
+          <ShinyButton>Projects</ShinyButton>
           <SectionTitle
-            heading="Showcase of My Work"
-            subHeading="Explore a collection of projects that showcase my growth and commitment to building impactful, user-focused web solutions."
+            heading="Our Portfolio of Impactful Work"
+            subHeading="Discover our expertly crafted projects that blend creativity, innovation, and user-centered design to elevate brands and digital experiences."
           />
         </div>
-        {/* More content here */}
+
         <div className="relative z-10 d-grid gap-6 shadow-2xl">
           {projects.slice(0, 6).map((project, index) => (
             <ProjestCard key={index} {...project} />
           ))}
         </div>
 
-        {/* AllProject button  */}
         <div className="text-center mt-12">
           <Link href="/projects">
-            <RainbowButton variant="outline">See All Projects</RainbowButton>
+            <RainbowButton variant="outline">Explore All Projects</RainbowButton>
           </Link>
         </div>
       </div>
