@@ -18,13 +18,6 @@ const lastNames = [
   'Thomas', 'Taylor', 'Moore', 'Jackson', 'Martin'
 ];
 
-// List of US cities for usernames
-const cities = [
-  'NewYork', 'LosAngeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 
-  'SanAntonio', 'SanDiego', 'Dallas', 'SanJose', 'Austin', 'Jacksonville',
-  'SanFrancisco', 'Columbus', 'Indianapolis', 'Seattle', 'Denver', 'Boston'
-];
-
 // Random business-related review texts
 const reviewTexts = [
   "Your design system cut our development time in half! Absolute game-changer for our team.",
@@ -51,10 +44,9 @@ const reviewTexts = [
 
 // Generate random reviews
 const generateReviews = () => {
-  return Array.from({ length: 16 }, (_, i) => {
+  return Array.from({ length: 16 }, () => {
     const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
     const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
-    const city = cities[Math.floor(Math.random() * cities.length)];
     const username = `@${firstName.toLowerCase()}${Math.floor(Math.random() * 90 + 10)}`;
     const img = `https://randomuser.me/api/portraits/${Math.random() > 0.5 ? 'men' : 'women'}/${Math.floor(Math.random() * 50)}.jpg`;
     const body = reviewTexts[Math.floor(Math.random() * reviewTexts.length)];
