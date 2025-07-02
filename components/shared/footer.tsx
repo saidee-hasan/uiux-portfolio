@@ -1,25 +1,25 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaInstagram, 
-  FaEnvelope,
-  FaDribbble,
-  FaBehance,
-  FaTwitter,
-  FaYoutube,
-  FaArrowUp
-} from 'react-icons/fa'
-import { FiFigma, FiArrowUpRight } from 'react-icons/fi'
-import { motion, useAnimation, AnimatePresence } from 'framer-motion'
-import { usePathname } from 'next/navigation'
-import logoDark from "../../public/logo.webp";
-import logoLight from "../../public/logo2.webp";
-import Image from 'next/image'
+import { AnimatePresence, motion, useAnimation } from 'framer-motion'
 import { useTheme } from 'next-themes'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import {
+  FaArrowUp,
+  FaBehance,
+  FaDribbble,
+  FaEnvelope,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube
+} from 'react-icons/fa'
+import { FiArrowUpRight, FiFigma } from 'react-icons/fi'
+import logoDark from "../../public/logo.webp"
+import logoLight from "../../public/logo2.webp"
 const Footer = () => {
   const year = new Date().getFullYear()
   const pathname = usePathname()
@@ -322,7 +322,7 @@ const [isHovering, setIsHovering] = useState<number | null>(null);
                     href="mailto:hello.uiverse.bd@gmail.com" 
                     className="text-xs text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center group"
                   >
-                    hello@uiverse.design
+                   ello.uiverse@gmail.com
                     <FiArrowUpRight className="ml-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150 text-xs" />
                   </a>
                 </div>
@@ -343,7 +343,7 @@ const [isHovering, setIsHovering] = useState<number | null>(null);
                     href="tel:+1234567890" 
                     className="text-xs text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
                   >
-                    +1 (234) 567-890
+                    +880  1790973652
                   </a>
                 </div>
               </motion.div>
