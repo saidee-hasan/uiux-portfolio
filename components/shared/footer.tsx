@@ -18,8 +18,8 @@ import {
   FaYoutube
 } from 'react-icons/fa'
 import { FiArrowUpRight, FiFigma } from 'react-icons/fi'
-import logoDark from "../../public/logo.webp"
-import logoLight from "../../public/logo2.webp"
+import logoDark from "../../public/logo2.png"
+import logoLight from "../../public/logo2.png"
 const Footer = () => {
   const year = new Date().getFullYear()
   const pathname = usePathname()
@@ -322,7 +322,7 @@ const [isHovering, setIsHovering] = useState<number | null>(null);
                     href="mailto:hello.uiverse.bd@gmail.com" 
                     className="text-xs text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center group"
                   >
-                   ello.uiverse@gmail.com
+                   hello.uiverse@gmail.com
                     <FiArrowUpRight className="ml-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150 text-xs" />
                   </a>
                 </div>
@@ -361,8 +361,7 @@ const [isHovering, setIsHovering] = useState<number | null>(null);
                 <div>
                   <p className="text-xs font-medium text-gray-600 dark:text-gray-300">Visit Us</p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
-                    123 Design Street<br />
-                    Dhaka, Bangladesh
+                  Bogura, Bangladesh
                   </p>
                 </div>
               </motion.div>

@@ -1,262 +1,241 @@
 'use client'
 
-
 import { motion } from 'framer-motion'
-import { FiAward, FiUsers, FiLayers, FiCode, FiMail, FiPhone } from 'react-icons/fi'
+import { FiAward, FiUsers, FiLayers, FiCode, FiMail, FiPhone, FiBriefcase, FiChevronRight } from 'react-icons/fi'
 import Image from 'next/image'
 
 const AboutPage = () => {
-  // Statistics data
+  // Premium statistics data
   const stats = [
-    { value: '75+', label: 'Projects Delivered', icon: <FiLayers className="text-2xl" /> },
-    { value: '6+', label: 'Years Experience', icon: <FiAward className="text-2xl" /> },
-    { value: '98%', label: 'Client Retention', icon: <FiUsers className="text-2xl" /> },
-    { value: '40+', label: 'Technologies', icon: <FiCode className="text-2xl" /> }
-  ]
-
-  // Team members data with placeholder images
-  const team = [
     { 
-      name: 'Saidee Hasan', 
-      role: 'Founder & Creative Director', 
-      image: '/developer.png', // Changed to local path - you should add these images to your public folder
-      contact: {
-        email: 'info@gmail.com',
-        phone: '+1 (555) 123-4567'
-      }
+      value: '50+', 
+      label: 'Successful Projects', 
+      icon: <FiBriefcase className="text-3xl" />,
+      description: 'Global clients served'
     },
     { 
-      name: 'Alex Johnson', 
-      role: 'Lead UX Designer', 
-      image: '/team/alex.jpg',
-      contact: {
-        email: 'alex@example.com',
-        phone: '+1 (555) 234-5678'
-      }
+      value: '3+', 
+      label: 'Years Excellence', 
+      icon: <FiAward className="text-3xl" />,
+      description: 'Award-winning designs'
     },
     { 
-      name: 'Sarah Williams', 
-      role: 'UI Developer', 
-      image: '/team/sarah.jpg',
-      contact: {
-        email: 'sarah@example.com',
-        phone: '+1 (555) 345-6789'
-      }
+      value: '390+', 
+      label: 'Client Testimonials', 
+      icon: <FiUsers className="text-3xl" />,
+      description: '5-star rated experiences'
     },
     { 
-      name: 'Michael Chen', 
-      role: 'Motion Designer', 
-      image: '/team/michael.jpg',
-      contact: {
-        email: 'michael@example.com',
-        phone: '+1 (555) 456-7890'
-      }
+      value: '98%', 
+      label: 'Retention Rate', 
+      icon: <FiCode className="text-3xl" />,
+      description: 'Repeat business'
     }
   ]
 
+  // Premium CEO/Founder section
+  const ceo = {
+    name: 'Mosabbir Hossain',
+    title: 'Founder & Creative Director',
+    image: '/developer.png',
+    bio: 'Visionary leader with a decade of experience transforming brands through strategic design. Our studio was founded on the principle that exceptional design should be both beautiful and functional, delivering measurable business results.',
+    achievements: [
+      'Forbes 30 Under 30 Design',
+      'Awwwards Hall of Fame',
+      '500+ successful projects',
+      'Keynote speaker at Design Summit'
+    ],
+    contact: {
+      email: 'saidee@premiumdesign.co',
+      phone: '+1 (555) 123-4567'
+    }
+  }
+
   const approachItems = [
     {
-      title: "Human-Centered Design",
-      description: "We start with deep user research to understand behaviors, needs, and motivations, ensuring our solutions resonate with real people.",
-      icon: <FiUsers className="text-primary dark:text-purple-400 text-2xl mb-4" />
+      title: "Bespoke Design Solutions",
+      description: "Tailored interfaces crafted for your unique business objectives and audience needs, ensuring perfect alignment with your brand identity.",
+      icon: <FiUsers className="text-gold-500 text-3xl" />
     },
     {
-      title: "Strategic Thinking",
-      description: "Every design decision serves a purpose. We align aesthetics with business objectives to create meaningful impact.",
-      icon: <FiLayers className="text-primary dark:text-purple-400 text-2xl mb-4" />
+      title: "Strategic Innovation",
+      description: "Data-driven design decisions that deliver measurable business impact through rigorous user research and testing methodologies.",
+      icon: <FiLayers className="text-gold-500 text-3xl" />
     },
     {
-      title: "Technical Excellence",
-      description: "Our designs are built to perform. We combine cutting-edge technology with robust architecture for seamless experiences.",
-      icon: <FiCode className="text-primary dark:text-purple-400 text-2xl mb-4" />
+      title: "Technical Mastery",
+      description: "Flawless execution across all platforms and devices with pixel-perfect attention to detail and cutting-edge technologies.",
+      icon: <FiCode className="text-gold-500 text-3xl" />
     }
   ]
 
   return (
-    <section className="section-container py-16 md:py-24 w-9/12 mx-auto">
-      {/* Hero Section */}
-      <div className="text-center mb-20">
-     
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300"
-        >
-          We are a collective of passionate designers, developers, and strategists dedicated to crafting 
-          exceptional digital experiences that drive results. Since our founding in 2018, we`&apos`ve partnered 
-          with forward-thinking brands to transform visions into impactful digital solutions.
-        </motion.p>
-      </div>
-
-      {/* Stats Section */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-        {stats.map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 + 0.4, duration: 0.5 }}
-            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md border border-gray-100 dark:border-gray-700 text-center transition-all"
-            aria-label={`${stat.value} ${stat.label}`}
-          >
-            <div className="text-primary dark:text-purple-400 mb-3 flex justify-center" aria-hidden="true">
-              {stat.icon}
-            </div>
-            <h3 className="text-3xl font-bold mb-1 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-              {stat.value}
-            </h3>
-            <p className="text-gray-500 dark:text-gray-400">{stat.label}</p>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Our Story */}
-      <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-        >
-          <h2 className="text-3xl font-bold mb-6 dark:text-white">Our Journey</h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
-            Founded in 2018 by Tasmina Akter, our agency began as a boutique studio with a simple mission: 
-            to create digital experiences that combine aesthetic excellence with functional perfection. 
-            What started as a one-person operation has flourished into a multidisciplinary team of 
-            award-winning creatives.
-          </p>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
-            We`&apos`ve had the privilege of working with startups, Fortune 500 companies, and everything in between, 
-            helping them navigate the digital landscape with confidence and creativity.
-          </p>
-          <div className="flex gap-4">
-            <button 
-              className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              aria-label="View our portfolio"
+    <div className="bg-white dark:bg-gray-900">
+      {/* CEO Spotlight - Premium Redesign */}
+      <section className="py-28 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            {/* CEO Portrait - Enhanced */}
+            <motion.div 
+              className="lg:w-1/2 relative"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              Our Portfolio
-            </button>
-            <button 
-              className="border border-gray-300 dark:border-gray-600 px-6 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              aria-label="Read client stories"
-            >
-              Client Stories
-            </button>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg"
-        >
-          <Image
-            src="/about/team-working.jpg" // Changed to local path
-            alt="Our team working together in the office"
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" aria-hidden="true" />
-        </motion.div>
-      </div>
-
-      {/* Our Approach */}
-      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 md:p-12 mb-20 border border-gray-100 dark:border-gray-700">
-        <h2 className="text-3xl font-bold mb-8 text-center dark:text-white">Our Design Philosophy</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {approachItems.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 + index * 0.2, duration: 0.5 }}
-              className="bg-white dark:bg-gray-700/30 p-8 rounded-xl border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all"
-            >
-              <div className="flex justify-center" aria-hidden="true">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-center dark:text-white">{item.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">{item.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* Meet the Team */}
-      <div className="mb-20">
-        <h2 className="text-3xl font-bold mb-12 text-center dark:text-white">Leadership Team</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {team.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
-              className="group text-center"
-            >
-              <div className="relative h-72 w-full mb-4 rounded-xl overflow-hidden shadow-lg">
+              <div className="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl group">
                 <Image
-                  src={member.image}
-                  alt={`Portrait of ${member.name}, ${member.role}`}
+                  src={ceo.image}
+                  alt={`Professional portrait of ${ceo.name}`}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  priority={index < 2} // Only prioritize first 2 images
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <div className="text-white text-left">
-                    <div className="flex items-center gap-2 mb-1">
-                      <FiMail className="w-4 h-4" />
-                      <span className="text-sm">{member.contact.email}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <FiPhone className="w-4 h-4" />
-                      <span className="text-sm">{member.contact.phone}</span>
-                    </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+                <div className="absolute inset-0 border-8 border-white/10 rounded-3xl pointer-events-none" />
+              </div>
+              
+              {/* Enhanced Name Tag */}
+              <motion.div 
+                className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 z-10"
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-8 bg-gold-500 rounded-full"></div>
+                  <div>
+                    <h3 className="text-2xl font-bold dark:text-white">{ceo.name}</h3>
+                    <p className="text-gold-500 font-medium">{ceo.title}</p>
                   </div>
                 </div>
-              </div>
-              <h3 className="text-xl font-semibold dark:text-white">{member.name}</h3>
-              <p className="text-gray-500 dark:text-gray-400">{member.role}</p>
+              </motion.div>
             </motion.div>
-          ))}
-        </div>
-      </div>
 
-      {/* CTA Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="bg-gradient-to-r from-primary to-purple-600 rounded-3xl p-12 text-center text-white relative overflow-hidden"
-      >
-        <div className="absolute inset-0 opacity-10" aria-hidden="true">
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat"></div>
-        </div>
-        <div className="relative z-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to elevate your digital presence?</h2>
-          <p className="max-w-2xl mx-auto mb-8 text-white/90">
-            Let`&apos`s collaborate to create something extraordinary. Our team is ready to bring your vision to life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              className="bg-white text-primary px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
-              aria-label="Schedule a consultation"
+            {/* CEO Bio - Premium Styling */}
+            <motion.div 
+              className="lg:w-1/2"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Schedule a Consultation
-            </button>
-            <button 
-              className="border border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-colors focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
-              aria-label="View case studies"
-            >
-              View Case Studies
-            </button>
+              <div className="mb-10">
+                <span className="text-gold-500 font-medium uppercase tracking-widest text-sm">Leadership</span>
+                <h2 className="text-4xl font-bold mb-6 dark:text-white font-serif mt-2">Founder&apos;s Vision</h2>
+                <div className="h-1 w-20 bg-gold-500 mb-8"></div>
+                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                  {ceo.bio}
+                </p>
+              </div>
+              
+              <div className="mb-10 bg-gray-50 dark:bg-gray-800 p-8 rounded-xl border border-gray-100 dark:border-gray-700">
+                <h4 className="text-xl font-semibold mb-4 dark:text-white flex items-center gap-2">
+                  <FiAward className="text-gold-500" /> Notable Achievements
+                </h4>
+                <ul className="space-y-3">
+                  {ceo.achievements.map((achievement, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-gold-500 mr-3 mt-1">✦</span>
+                      <span className="text-gray-700 dark:text-gray-300">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.button
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-lg font-medium hover:opacity-90 transition-all flex items-center gap-3 shadow-lg"
+                >
+                  <FiMail className="text-lg" /> 
+                  <span>Email {ceo.name.split(' ')[0]}</span>
+                </motion.button>
+                <motion.button
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="border-2 border-gray-200 dark:border-gray-600 px-8 py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all flex items-center gap-3"
+                >
+                  <FiPhone className="text-lg" />
+                  <span>Call Our Studio</span>
+                </motion.button>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </motion.div>
-    </section>
+      </section>
+
+      {/* Design Philosophy - Premium Section */}
+      <section className="py-28 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <span className="text-gold-500 font-medium uppercase tracking-widest text-sm">Methodology</span>
+            <h2 className="text-4xl font-bold mb-4 dark:text-white font-serif mt-3">Our Design Philosophy</h2>
+            <div className="flex justify-center">
+              <div className="h-1 w-20 bg-gold-500"></div>
+            </div>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-6">
+              The principles that guide our creative process
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {approachItems.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 dark:bg-gray-800 p-10 rounded-2xl hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700 group"
+              >
+                <div className="text-gold-500 mb-6 flex items-center justify-center w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-sm group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                  {item.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4 dark:text-white">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+                <div className="mt-6">
+                  <button className="text-gold-500 hover:text-gold-600 font-medium flex items-center gap-2 transition-colors">
+                    Learn more <FiChevronRight />
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics - Premium Display */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700 group"
+              >
+                <div className="text-gold-500 mb-4 flex justify-center">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-full group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                    {stat.icon}
+                  </div>
+                </div>
+                <h3 className="text-5xl font-bold mb-3 text-gray-900 dark:text-white font-serif">
+                  {stat.value}
+                </h3>
+                <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  {stat.label}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  {stat.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 

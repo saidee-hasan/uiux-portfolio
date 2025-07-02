@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 import ModeToggle from "./ModeToggle";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
-import logoDark from "../../public/logo.webp";
-import logoLight from "../../public/logo2.webp";
+import logoDark from "../../public/logo2.png";
+import logoLight from "../../public/logo2.png";
 import { useTheme } from "next-themes";
 
 const Navbar = () => {
