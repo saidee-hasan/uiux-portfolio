@@ -60,11 +60,11 @@ export default function SidebarCard() {
                     },
                     {
                       icon: IconBrandInstagram,
-                      url: "https://instagram.com",
+                      url: "https://instagram.com/ui_verse_1/",
                     },
                     {
                       icon: IconBrandLinkedin,
-                      url: "https://www.linkedin.com",
+                      url: "https://www.linkedin.com/in/uiverse",
                     },
                   ].map(({ icon: Icon, url }, index) => (
                     <a
@@ -87,7 +87,7 @@ export default function SidebarCard() {
                 <div className="w-16 h-16 mx-auto flex items-center justify-center border-2 border-dashed shadow-xl rounded-full">
                   <IconMailSpark className="w-6 h-6" />
                 </div>
-                <div className="mt-4 text-xs text-gray-400">tasmina163@gmail.com</div>
+                <div className="mt-4 text-xs text-gray-400">hello.uiverse@gmail.com</div>
               </div>
             </div>
           </CardContent>

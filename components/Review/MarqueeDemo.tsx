@@ -4,56 +4,71 @@ import { Marquee } from "@/components/magicui/marquee";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const reviews = [
-  {
-    name: "Jack Daniels",
-    username: "@jack_d",
-    body: "The design system you created reduced our development time by 40%. Absolutely game-changing!",
-    img: "https://avatar.vercel.sh/jack",
-  },
-  {
-    name: "Jill Smith",
-    username: "@jillux",
-    body: "Our conversion rates increased by 28% after implementing your UX recommendations. Stellar work!",
-    img: "https://avatar.vercel.sh/jill",
-  },
-  {
-    name: "John Reynolds",
-    username: "@john_product",
-    body: "The accessibility audit uncovered issues we never considered. Now our app works for everyone!",
-    img: "https://avatar.vercel.sh/john",
-  },
-  {
-    name: "Jane Cooper",
-    username: "@jane_ceo",
-    body: "Your microinteractions made our product feel premium. Users can't stop complimenting the feel!",
-    img: "https://avatar.vercel.sh/jane",
-  },
-  {
-    name: "Jenny Wilson",
-    username: "@jenny_dev",
-    body: "The design system documentation is so thorough, our engineers are actually excited to use it!",
-    img: "https://avatar.vercel.sh/jenny",
-  },
-  {
-    name: "James Rodriguez",
-    username: "@james_cto",
-    body: "Your user testing methodology revealed pain points we'd been missing for years. Incredible insights!",
-    img: "https://avatar.vercel.sh/james",
-  },
-  {
-    name: "Sarah Johnson",
-    username: "@sarah_pm",
-    body: "The onboarding flow you designed reduced our support tickets by 65%. Worth every penny!",
-    img: "https://avatar.vercel.sh/sarah",
-  },
-  {
-    name: "Michael Chen",
-    username: "@mike_ux",
-    body: "Your component library is so robust, we've adopted it across all our products. Consistency achieved!",
-    img: "https://avatar.vercel.sh/michael",
-  },
+// List of common US first names
+const firstNames = [
+  'Emma', 'Liam', 'Olivia', 'Noah', 'Ava', 'Elijah', 'Charlotte', 'William',
+  'Sophia', 'James', 'Amelia', 'Benjamin', 'Isabella', 'Lucas', 'Mia', 'Henry',
+  'Evelyn', 'Alexander', 'Harper', 'Michael'
 ];
+
+// List of common US last names
+const lastNames = [
+  'Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis',
+  'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Gonzalez', 'Wilson', 'Anderson',
+  'Thomas', 'Taylor', 'Moore', 'Jackson', 'Martin'
+];
+
+// List of US cities for usernames
+const cities = [
+  'NewYork', 'LosAngeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 
+  'SanAntonio', 'SanDiego', 'Dallas', 'SanJose', 'Austin', 'Jacksonville',
+  'SanFrancisco', 'Columbus', 'Indianapolis', 'Seattle', 'Denver', 'Boston'
+];
+
+// Random business-related review texts
+const reviewTexts = [
+  "Your design system cut our development time in half! Absolute game-changer for our team.",
+  "The UX improvements increased our conversion rate by 35%. Stellar work!",
+  "Our customer satisfaction scores went through the roof after your redesign.",
+  "The accessibility audit uncovered issues we never considered. Now our app works for everyone!",
+  "Your microinteractions made our product feel premium. Users love the new experience!",
+  "The onboarding flow you designed reduced our support tickets by 60%. Worth every penny!",
+  "Your component library is so robust, we've adopted it across all our products.",
+  "The performance optimizations you suggested made our app 3x faster on mobile.",
+  "Your A/B testing framework helped us identify the perfect pricing strategy.",
+  "The branding you created perfectly captures our company's mission and values.",
+  "Your analytics dashboard gives us insights we never had before. Data-driven decisions made easy!",
+  "The mobile app you designed has a 4.9-star rating in both app stores. Phenomenal!",
+  "Your content strategy increased our organic traffic by 200% in just three months.",
+  "The email templates you designed have double the open rate of our previous ones.",
+  "Your social media strategy grew our following by 10,000 in the first month alone.",
+  "The video content you produced explains our product better than we ever could.",
+  "Your SEO recommendations got us to the first page of Google for our main keywords.",
+  "The chatbot you implemented handles 80% of customer inquiries automatically.",
+  "Your marketplace design increased transactions by 45% month over month.",
+  "The gamification elements you added boosted user engagement by 300%."
+];
+
+// Generate random reviews
+const generateReviews = () => {
+  return Array.from({ length: 16 }, (_, i) => {
+    const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+    const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+    const city = cities[Math.floor(Math.random() * cities.length)];
+    const username = `@${firstName.toLowerCase()}${Math.floor(Math.random() * 90 + 10)}`;
+    const img = `https://randomuser.me/api/portraits/${Math.random() > 0.5 ? 'men' : 'women'}/${Math.floor(Math.random() * 50)}.jpg`;
+    const body = reviewTexts[Math.floor(Math.random() * reviewTexts.length)];
+    
+    return {
+      name: `${firstName} ${lastName}`,
+      username,
+      body,
+      img,
+    };
+  });
+};
+
+const reviews = generateReviews();
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -151,7 +166,7 @@ export function MarqueeDemo() {
       <div className="relative w-full max-w-7xl mx-auto">
         <Marquee pauseOnHover className="[--duration:20s] mb-4">
           {firstRow.map((review, index) => (
-            <div key={review.username} className="mx-2">
+            <div key={`${review.username}-${index}`} className="mx-2">
               <ReviewCard 
                 {...review} 
                 isTyping={isTypingActive && typingIndex === index}
@@ -161,7 +176,7 @@ export function MarqueeDemo() {
         </Marquee>
         <Marquee reverse pauseOnHover className="[--duration:20s]">
           {secondRow.map((review, index) => (
-            <div key={review.username} className="mx-2">
+            <div key={`${review.username}-${index}`} className="mx-2">
               <ReviewCard 
                 {...review} 
                 isTyping={isTypingActive && typingIndex === index + firstRow.length}

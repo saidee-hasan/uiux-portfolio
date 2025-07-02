@@ -17,11 +17,11 @@ const AboutPage = () => {
   // Team members data with placeholder images
   const team = [
     { 
-      name: 'Tasmina Akter', 
+      name: 'Saidee Hasan', 
       role: 'Founder & Creative Director', 
-      image: '/team/tasmina.jpg', // Changed to local path - you should add these images to your public folder
+      image: '/developer.png', // Changed to local path - you should add these images to your public folder
       contact: {
-        email: 'tasmina@example.com',
+        email: 'info@gmail.com',
         phone: '+1 (555) 123-4567'
       }
     },

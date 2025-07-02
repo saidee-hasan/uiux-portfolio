@@ -99,9 +99,9 @@ const Footer = () => {
     { icon: <FaDribbble size={14} />, name: "Dribbble", color: "#ea4c89", link: "#" },
     { icon: <FaBehance size={14} />, name: "Behance", color: "#1769ff", link: "#" },
     { icon: <FiFigma size={14} />, name: "Figma", color: "#a259ff", link: "#" },
-    { icon: <FaGithub size={14} />, name: "GitHub", color: "#4078c0", link: "#" },
-    { icon: <FaLinkedin size={14} />, name: "LinkedIn", color: "#0077b5", link: "#" },
-    { icon: <FaInstagram size={14} />, name: "Instagram", color: "#e1306c", link: "#" },
+    { icon: <FaGithub size={14} />, name: "GitHub", color: "#4078c0", link: "" },
+    { icon: <FaLinkedin size={14} />, name: "LinkedIn", color: "#0077b5", link: "https://instagram.com/ui_verse_1/" },
+    { icon: <FaInstagram size={14} />, name: "Instagram", color: "#e1306c", link: "https://www.linkedin.com/in/uiverse" },
     { icon: <FaTwitter size={14} />, name: "Twitter", color: "#1da1f2", link: "#" },
     { icon: <FaYoutube size={14} />, name: "YouTube", color: "#ff0000", link: "#" }
   ]

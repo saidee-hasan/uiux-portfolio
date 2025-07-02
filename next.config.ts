@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ["avatar.vercel.sh"],
-  },
   output: "export", 
+  images: {
+    unoptimized: true, 
+  },
 };
 
 export default nextConfig;
